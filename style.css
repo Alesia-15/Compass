@@ -39,6 +39,7 @@
   --dark: #151918;
   --light: #f6f6f2;
   --white: #ffffff;
+  --blue: #0e44f3;
   --text-main: rgba(21, 25, 24, 0.94);
   --text-soft: rgba(21, 25, 24, 0.72);
   --border: rgba(21, 25, 24, 0.12);
@@ -69,6 +70,32 @@ body.is-menu-open {
 
 a {
   color: inherit;
+}
+
+/* TYPOGRAPHY SYSTEM */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.block-title,
+.card-title {
+  font-family: "Adderley", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+p,
+li,
+.section-text,
+.block-text,
+.card-text {
+  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: none;
 }
 
 /* HEADER */
@@ -169,10 +196,8 @@ a {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-
   padding: 18px 24px;
   border-radius: 18px;
-
   color: var(--text-main);
   font-family: "Neutral Face", Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -181,7 +206,6 @@ a {
   letter-spacing: 0.035em;
   text-transform: uppercase;
   text-decoration: none;
-
   transition:
     color 0.3s ease,
     transform 0.3s ease;
@@ -410,21 +434,6 @@ a {
   text-transform: uppercase;
 }
 
-/* TEMP PLACEHOLDER */
-
-.page-placeholder {
-  min-height: 100vh;
-  padding: 140px 48px 48px;
-
-  display: grid;
-  place-items: center;
-
-  color: rgba(21, 25, 24, 0.32);
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
 /* ANIMATIONS */
 
 @keyframes arrowMove {
@@ -497,9 +506,5 @@ a {
 
   .mobile-actions a {
     font-size: 12px;
-  }
-
-  .page-placeholder {
-    padding: 120px 20px 40px;
   }
 }
