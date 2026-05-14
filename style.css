@@ -98,6 +98,69 @@ li,
   text-transform: none;
 }
 
+.button_blue {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 58px;
+  padding: 20px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(246, 246, 242, 0.28);
+  border-radius: 20px;
+  background: var(--blue);
+  color: var(--light);
+  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.button_blue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--light);
+  border-radius: inherit;
+  border: 1px solid var(--blue);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
+.button_blue:hover {
+  color: var(--blue);
+  transform: translateY(-2px);
+  border-color: var(--light);
+}
+
+.button_blue:hover::before {
+  transform: scaleX(1);
+}
+
+@media (max-width: 640px) {
+  .button_blue {
+    width: 100%;
+    min-height: 54px;
+    font-size: 12px;
+  }
+
+  .button_blue {
+    padding: 18px 20px;
+    border-radius: 18px;
+  }
+}
+
 /* HEADER */
 
 .site-header {
