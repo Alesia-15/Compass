@@ -40,17 +40,14 @@
 .about-label {
   margin: 0 0 20px;
   padding: 12px 22px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 999px;
-  background: var(--dark);
-  color: var(--light);
-
-  font-size: 13px;
-  font-weight: 400;
+  background: var(--light);
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: 0.035em;
   text-transform: uppercase;
