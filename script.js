@@ -1,3 +1,5 @@
+// burger
+
 const burger = document.querySelector(".burger");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileLinks = document.querySelectorAll(
@@ -61,3 +63,39 @@ if (burger && mobileMenu) {
     }
   });
 }
+
+// reviews
+
+const reviewModal = document.querySelector("#review-modal");
+const reviewOpenButtons = document.querySelectorAll(".reviews-open");
+const reviewCloseButtons = document.querySelectorAll("[data-review-close]");
+
+function openReviewModal() {
+  if (!reviewModal) return;
+
+  reviewModal.classList.add("is-open");
+  reviewModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("is-menu-open");
+}
+
+function closeReviewModal() {
+  if (!reviewModal) return;
+
+  reviewModal.classList.remove("is-open");
+  reviewModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("is-menu-open");
+}
+
+reviewOpenButtons.forEach((button) => {
+  button.addEventListener("click", openReviewModal);
+});
+
+reviewCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeReviewModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeReviewModal();
+  }
+});
