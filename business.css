@@ -1,0 +1,395 @@
+.business-section {
+  max-height: 100vh;
+  padding: 40px 48px;
+  background: var(--light);
+
+  display: flex;
+  align-items: center;
+}
+
+.business-inner {
+  position: relative;
+
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 42px 48px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 34px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(246, 246, 242, 0.96)
+    ),
+    var(--light);
+
+  box-shadow: 0 0 80px rgba(21, 25, 24, 0.1);
+}
+
+.business-inner::before {
+  content: "";
+
+  position: absolute;
+  right: -210px;
+  bottom: -260px;
+
+  width: 600px;
+  height: 600px;
+
+  background: rgba(21, 152, 90, 0.055);
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 26% 50%);
+}
+
+.business-head {
+  position: relative;
+  z-index: 2;
+
+  max-width: 980px;
+  margin: 0 0 34px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.business-label {
+  margin: 0 0 20px;
+  padding: 12px 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--light);
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.business-head h2 {
+  margin: 0;
+
+  color: var(--dark);
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.business-subtitle {
+  max-width: 760px;
+  margin: 22px 0 0;
+
+  color: rgba(21, 25, 24, 0.66);
+  font-size: clamp(14px, 1.05vw, 18px);
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.business-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.business-card {
+  position: relative;
+
+  min-height: 500px;
+  padding: 26px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(21, 25, 24, 0.1);
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--dark);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.business-card::after {
+  content: ">";
+
+  position: absolute;
+  right: -18px;
+  bottom: -58px;
+
+  color: rgba(21, 152, 90, 0.08);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 190px;
+  font-weight: 700;
+  line-height: 1;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(21, 152, 90, 0.28);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 44px rgba(21, 25, 24, 0.08);
+}
+
+.business-card:hover::after {
+  color: rgba(21, 152, 90, 0.13);
+  transform: translateX(10px);
+}
+
+.business-card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.business-card-label {
+  padding: 12px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--light);
+
+  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.business-card-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--light);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.business-card:hover .business-card-icon {
+  transform: translateX(4px);
+  background: var(--dark);
+}
+
+.business-card-content {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 34px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.business-group h3 {
+  margin: 0 0 10px;
+
+  color: var(--dark);
+  font-size: clamp(18px, 1.25vw, 22px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.business-group ul {
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  gap: 8px;
+
+  list-style: none;
+}
+
+.business-group li {
+  position: relative;
+
+  padding-left: 20px;
+
+  color: rgba(21, 25, 24, 0.66);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
+  text-transform: none;
+}
+
+.business-group li::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* CARD VARIATIONS */
+
+.business-card-accent {
+  border-color: rgba(21, 152, 90, 0.24);
+}
+
+.business-card-accent .business-card-label {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.business-card-large-company {
+  border-color: rgba(21, 152, 90, 0.24);
+  background: rgba(246, 246, 242, 0.86);
+}
+
+.business-card-large-company .business-card-label {
+  background: var(--green);
+  color: var(--light);
+}
+
+.business-card-large-company .business-card-icon {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.business-card-large-company:hover .business-card-icon {
+  background: var(--green);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .business-section {
+    min-height: auto;
+    padding: 40px 24px;
+    align-items: flex-start;
+  }
+
+  .business-inner {
+    padding: 42px 36px;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .business-section {
+    min-height: auto;
+    padding: 32px 12px;
+  }
+
+  .business-inner {
+    padding: 36px 22px 28px;
+    border-radius: 26px;
+  }
+
+  .business-head {
+    margin-bottom: 28px;
+  }
+
+  .business-label {
+    margin-bottom: 22px;
+    padding: 12px 20px;
+    font-size: 11px;
+  }
+
+  .business-head h2 {
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1;
+  }
+
+  .business-subtitle {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .business-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .business-card-top {
+    align-items: flex-start;
+  }
+
+  .business-card-label {
+    padding: 11px 16px;
+    font-size: 11px;
+  }
+
+  .business-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+  }
+
+  .business-card-content {
+    margin-top: 30px;
+    gap: 24px;
+  }
+
+  .business-group h3 {
+    font-size: 24px;
+  }
+
+  .business-group li {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+}
