@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./services.css" />
     <link rel="stylesheet" href="./trust.css" />
     <link rel="stylesheet" href="./business.css" />
+    <link rel="stylesheet" href="./consultation.css" />
+    <link rel="stylesheet" href="./company.css" />
   </head>
 
   <body id="top">
@@ -500,6 +502,117 @@
                 </div>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="consultation-section"
+        id="order"
+        aria-labelledby="consultation-title"
+      >
+        <div class="consultation-inner">
+          <div class="consultation-content">
+            <p class="consultation-label">Заявка на расчет</p>
+
+            <h2 id="consultation-title">
+              Начните поставки<br />
+              из Европы без рисков
+            </h2>
+
+            <p class="consultation-text">
+              Оставьте заявку — и мы предложим конкретное решение под вашу
+              задачу. Вы получите расчёт сроков и стоимости, а также
+              персонального менеджера, который будет сопровождать вас на всех
+              этапах.
+            </p>
+          </div>
+
+          <form class="consultation-form" action="./send.php" method="post">
+            <div class="consultation-form-head">
+              <h3>Получить расчет и бесплатную консультацию</h3>
+
+              <p>
+                Оставьте контакты — мы свяжемся с вами и предложим решение под
+                вашу задачу.
+              </p>
+            </div>
+
+            <div class="consultation-form-fields">
+              <label class="consultation-field">
+                <span>Ваше имя</span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Ваше имя"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+
+              <label class="consultation-field">
+                <span>Телефон</span>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+375 00 000 00 00"
+                  autocomplete="tel"
+                  required
+                />
+              </label>
+
+              <label class="consultation-field">
+                <span>Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Ваш e-mail"
+                  autocomplete="email"
+                />
+              </label>
+
+              <label class="consultation-field">
+                <span>Компания</span>
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Компания / ИП"
+                  autocomplete="organization"
+                />
+              </label>
+
+              <label class="consultation-field consultation-field-full">
+                <span>Что нужно привезти?</span>
+                <textarea
+                  name="message"
+                  placeholder="Опишите товар, страну, объем или задачу"
+                  required
+                ></textarea>
+              </label>
+            </div>
+
+            <label class="consultation-checkbox">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Я согласен на обработку персональных данных и принимаю политику
+                конфиденциальности
+              </span>
+            </label>
+
+            <button class="button_blue" type="submit">
+              Получить бесплатную консультацию
+            </button>
+          </form>
+
+          <div class="consultation-manager">
+            <div class="consultation-manager-photo">
+              <img src="./Images/manager.jpg" alt="Персональный менеджер" />
+            </div>
+
+            <div class="consultation-manager-info">
+              <strong>Ольга Шолл</strong>
+              <span>Коммерческий директор</span>
+            </div>
           </div>
         </div>
       </section>
