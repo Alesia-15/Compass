@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./consultation.css" />
     <link rel="stylesheet" href="./company.css" />
     <link rel="stylesheet" href="./reviews.css" />
+    <link rel="stylesheet" href="./footer.css" />
   </head>
 
   <body id="top">
@@ -926,7 +927,131 @@
           </form>
         </div>
       </div>
+
+      <section
+        class="final-section"
+        id="contacts"
+        aria-labelledby="final-title"
+      >
+        <div class="final-inner">
+          <div class="final-content">
+            <p class="final-label">Мы работаем, звоните</p>
+
+            <h2 id="final-title">Остались вопросы?</h2>
+
+            <p>
+              Оставьте заявку — позвоним вам в течение 10 минут и подскажем, как
+              организовать поставку под вашу задачу.
+            </p>
+          </div>
+
+          <form class="final-form" action="./send.php" method="post">
+            <div class="final-fields">
+              <label>
+                <span>Ваше имя</span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Ваше имя"
+                  required
+                />
+              </label>
+
+              <label>
+                <span>Телефон</span>
+                <input type="tel" name="phone" placeholder="Телефон" required />
+              </label>
+
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="Ваш e-mail" />
+              </label>
+            </div>
+
+            <label class="final-checkbox">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Я согласен на обработку персональных данных в соответствии с
+                политикой конфиденциальности
+              </span>
+            </label>
+
+            <button class="button_blue final-button" type="submit">
+              Получить консультацию
+            </button>
+          </form>
+
+          <div class="final-manager">
+            <div class="final-manager-photo">
+              <img src="./Images/manager.jpg" alt="Персональный менеджер" />
+            </div>
+
+            <div class="final-manager-info">
+              <strong>Персональный менеджер</strong>
+              <span>Сопроводит заявку от первого звонка до результата</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#top" class="footer-logo" aria-label="Компас Групп">
+            <img src="./Images/logo_compass_group_ru.svg" alt="Компас Групп" />
+          </a>
+
+          <p>
+            Международные поставки товаров из Европы для бизнеса в Беларуси,
+            России и странах СНГ.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Навигация</h3>
+
+          <nav class="footer-nav" aria-label="Навигация в подвале">
+            <a href="#services">Услуги</a>
+            <a href="#business">Для кого</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#company">О компании</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+        </div>
+
+        <div class="footer-column">
+          <h3>Документы</h3>
+
+          <nav class="footer-nav" aria-label="Документы">
+            <a href="./privacy.html">Политика конфиденциальности</a>
+            <a href="./personal-data.html"
+              >Политика обработки персональных данных</a
+            >
+          </nav>
+        </div>
+
+        <div class="footer-column footer-contacts">
+          <h3>Контакты</h3>
+
+          <a href="tel:+375445009509">+375 44 500 95 09</a>
+          <a href="mailto:compass.group.by@gmail.com"
+            >compass.group.by@gmail.com</a
+          >
+
+          <p>г. Гродно, ул. Буденного 41, каб. 2.04</p>
+
+          <div class="footer-socials" aria-label="Социальные сети">
+            <a href="#" aria-label="WhatsApp">WA</a>
+            <a href="#" aria-label="Telegram">TG</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Компас Групп. Все права защищены.</p>
+      </div>
+    </footer>
 
     <script src="./script.js"></script>
   </body>
