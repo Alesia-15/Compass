@@ -6,38 +6,31 @@
     <title>КОМПАС ГРУПП</title>
 
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./banner.css" />
-    <link rel="stylesheet" href="./about.css" />
-    <link rel="stylesheet" href="./protection.css" />
-    <link rel="stylesheet" href="./statement.css" />
-    <link rel="stylesheet" href="./services.css" />
-    <link rel="stylesheet" href="./trust.css" />
-    <link rel="stylesheet" href="./business.css" />
-    <link rel="stylesheet" href="./consultation.css" />
-    <link rel="stylesheet" href="./company.css" />
-    <link rel="stylesheet" href="./reviews.css" />
-    <link rel="stylesheet" href="./footer.css" />
   </head>
 
   <body id="top">
     <header class="site-header">
       <div class="header-inner">
         <a href="/" class="logo" aria-label="Компас Групп">
-          <img src="./Images/logo_compass_group_ru.svg" alt="Компас Групп" />
+          <img src="./Images/logo_compass_group.svg" alt="Компас Групп" />
         </a>
 
         <nav class="nav" aria-label="Основная навигация">
           <a href="#services">Услуги</a>
-          <a href="#cases">Кейсы</a>
+          <a href="#partners">Партнерам</a>
           <a href="#about">О компании</a>
           <a href="#contacts">Контакты</a>
         </nav>
 
         <div class="header-actions">
-          <a class="phone" href="tel:+375445009509"> +375 44 500 95 09 </a>
+          <a class="phone" href="tel:+375445009509">+375 44 500 95 09</a>
 
-          <a class="contact-link" href="#order">
-            <span>Заказать товар</span>
+          <a
+            class="contact-link consultation-modal-open"
+            href="#"
+            role="button"
+          >
+            <span>Получить консультацию</span>
           </a>
         </div>
 
@@ -60,8 +53,8 @@
             <span aria-hidden="true">&gt;</span>
           </a>
 
-          <a href="#cases">
-            Кейсы
+          <a href="#partners">
+            Партнерам
             <span aria-hidden="true">&gt;</span>
           </a>
 
@@ -77,167 +70,44 @@
         </nav>
 
         <div class="mobile-actions">
-          <a href="tel:+375445009509"> +375 44 500 95 09 </a>
+          <a href="tel:+375445009509">+375 44 500 95 09</a>
 
-          <a href="#order">Заказать товар</a>
+          <a class="consultation-modal-open" href="#" role="button">
+            Получить консультацию
+          </a>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="banner" aria-labelledby="banner-title">
-        <div class="banner-inner">
-          <div class="banner-content">
-            <h1 id="banner-title">
-              Найдем, выкупим, доставим — <br />все из Европы
-            </h1>
-
-            <p class="banner-subtitle">
-              Работаем с бизнесом любого масштаба: от маркетплейсов до
-              производств.<br />Берём на себя весь цикл — от поиска товара до
-              доставки.
-            </p>
-
-            <div class="banner-actions">
-              <a class="button_blue" href="#order">Оформить заказ</a>
-
-              <a class="button_blue" href="#calculation"> Получить расчет </a>
-            </div>
-          </div>
-
-          <div class="banner-arrows" aria-hidden="true">
-            <span>&gt;</span>
-            <span>&gt;</span>
-            <span>&gt;</span>
-            <span>&gt;</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="about-inner">
-          <div class="about-head">
-            <p class="about-label">Что мы делаем</p>
-
-            <h2 id="about-title">
-              Мы выстраиваем поставки<br />
-              для вашего бизнеса
-            </h2>
-
-            <p class="about-lead">
-              Помогаем компаниям находить, выкупать и доставлять товары из
-              Европы — быстро, прозрачно и под задачи конкретного бизнеса.
-            </p>
-          </div>
-
-          <div class="about-card">
-            <p>
-              «Компас Групп» — международная торговая компания, которая
-              организует поставки товаров из Европы в Беларусь, Россию и страны
-              СНГ.
-            </p>
-
-            <p>
-              Мы работаем для бизнеса, выстраивая стабильные поставки даже там,
-              где привычные логистические цепочки больше не работают.
-            </p>
-
-            <p>
-              В основе нашей работы — не просто логистика, а выстроенная сеть
-              европейских партнёров с многолетним опытом в торговле. Это
-              позволяет нам находить решения в сложных условиях и обеспечивать
-              клиентов надёжными поставками.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section
-        class="protection-section"
-        id="protection"
-        aria-labelledby="protection-title"
+        class="video-banner-section"
+        aria-labelledby="video-banner-title"
       >
-        <div class="protection-inner">
-          <div class="protection-head">
-            <p class="protection-label">Ваш товар — под нашей защитой</p>
-
-            <h2 id="protection-title">С КОМПАС ГРУПП вы получите:</h2>
+        <div class="video-banner">
+          <div class="video-banner-bg" aria-hidden="true">
+            <img src="./Images/video-placeholder.jpg" alt="" />
           </div>
 
-          <div class="protection-grid">
-            <article class="protection-card">
-              <span class="protection-number"></span>
+          <div class="video-banner-overlay"></div>
 
-              <h3>Прямой доступ к товарам из Европы</h3>
+          <div class="video-banner-content">
+            <h2 id="video-banner-title">Глобальная торговая компания</h2>
 
-              <p>
-                Открываем для вас прямые каналы поставок от европейских
-                производителей без лишних посредников и скрытых наценок.
-              </p>
-            </article>
+            <p class="video-banner-subtitle">
+              EXPORT IMPORT TRANZIT товаров и услуг
+            </p>
 
-            <article class="protection-card">
-              <span class="protection-number"></span>
-
-              <h3>Работа через проверенных поставщиков</h3>
-
-              <p>
-                Каждый партнёр проходит строгую проверку на надёжность и
-                качество, что снижает риски срыва поставок.
-              </p>
-            </article>
-
-            <article class="protection-card">
-              <span class="protection-number"></span>
-
-              <h3>Сопровождение сделки от запроса до доставки</h3>
-
-              <p>
-                Берём на себя весь цикл — от поиска товара до его прибытия на
-                ваш склад, чтобы вы могли сосредоточиться на бизнесе.
-              </p>
-            </article>
-
-            <article class="protection-card">
-              <span class="protection-number"></span>
-
-              <h3>Прозрачная схема работы</h3>
-
-              <p>
-                Вы всегда знаете, на каком этапе находится заказ, и получаете
-                полную отчётность с подтверждающими документами.
-              </p>
-            </article>
-
-            <article class="protection-card protection-card-wide">
-              <div>
-                <span class="protection-number"></span>
-
-                <h3>Персональный менеджер</h3>
-
-                <p>
-                  Один специалист ведёт вашу сделку от начала и до конца,
-                  оперативно решая вопросы без переключения между отделами.
-                </p>
-              </div>
-
-              <a class="button_blue" href="#contacts">
-                Получить персонального менеджера
-              </a>
-            </article>
+            <a
+              class="video-banner-button consultation-modal-open"
+              href="#"
+              role="button"
+            >
+              Получить консультацию
+            </a>
           </div>
-        </div>
-      </section>
 
-      <section
-        class="statement-section"
-        aria-label="Преимущество работы с Компас Групп"
-      >
-        <div class="statement-inner">
-          <p>
-            Мы берём на себя сложную часть международной торговли, чтобы вы
-            могли сосредоточиться на продажах и развитии бизнеса.
-          </p>
+          <div class="video-banner-play" aria-hidden="true">▶</div>
         </div>
       </section>
 
@@ -246,6 +116,42 @@
         id="services"
         aria-labelledby="services-title"
       >
+        <div class="services-top">
+          <h3 class="services-top-title">Что вы создадите сегодня?</h3>
+
+          <div class="services-search">
+            <span class="services-search-icon" aria-hidden="true">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="6.5"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M16 16L21 21"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+
+            <input
+              type="text"
+              placeholder="Напишите название или вставьте ссылку на нужный товар"
+              aria-label="Напишите название или вставьте ссылку на нужный товар"
+            />
+          </div>
+        </div>
+
         <div class="services-inner">
           <div class="services-head">
             <p class="services-label">Гарантия на каждом этапе</p>
@@ -255,476 +161,345 @@
 
           <div class="services-grid">
             <article class="services-card">
-              <div class="services-card-icon" aria-hidden="true">&gt;</div>
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
 
-              <h3>Поиск товара под запрос клиента</h3>
+              <h3>Поиск товара</h3>
 
               <p>
-                Вы даёте спецификацию или описываете потребность — мы находим
-                нужный товар у европейских производителей и поставщиков.
+                Менеджеры подбирают поставщиков и товары под задачи вашего
+                бизнеса — от оборудования и комплектующих до готовой продукции.
               </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="search"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-search.png" alt="" />
             </article>
 
             <article class="services-card">
-              <div class="services-card-icon" aria-hidden="true">&gt;</div>
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
 
-              <h3>Подбор и проверка поставщиков</h3>
+              <h3>Посреднические услуги</h3>
 
               <p>
-                Тщательно отбираем и проверяем поставщиков: оцениваем
-                надёжность, качество продукции и соответствие вашим требованиям.
+                Представляем ваши интересы при работе с иностранными
+                поставщиками и производителями.
               </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="middleman"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-partner.png" alt="" />
             </article>
 
             <article class="services-card">
-              <div class="services-card-icon" aria-hidden="true">&gt;</div>
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
 
-              <h3>Переговоры и согласование условий</h3>
+              <h3>Экспорт</h3>
 
               <p>
-                Ведём переговоры от вашего имени, добиваемся выгодных условий и
-                фиксируем обязательства в контракте.
+                Организуем экспорт продукции из РБ и РФ с учетом действующих
+                ограничений и требований международной логистики.
               </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="export"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-export.png" alt="" />
             </article>
 
             <article class="services-card">
-              <div class="services-card-icon" aria-hidden="true">&gt;</div>
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
 
-              <h3>Выкуп товара в Европе</h3>
+              <h3>Импорт</h3>
 
               <p>
-                Выкупаем товар на нашу компанию в Европе. Вы получаете законное
-                и прозрачное прохождение сделки без лишних рисков.
+                Осуществляем импорт товаров «под ключ» — от поиска и выкупа до
+                доставки и оформления документов.
               </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="import"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-import.png" alt="" />
             </article>
 
-            <article class="services-card services-card-large">
-              <div>
-                <div class="services-card-icon" aria-hidden="true">&gt;</div>
+            <article class="services-card">
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
 
-                <h3>Организация логистики</h3>
+              <h3>Транзит</h3>
 
-                <p>
-                  Разрабатываем оптимальный маршрут и схему доставки с учётом
-                  текущих ограничений. Работаем с проверенными перевозчиками и
-                  таможенными представителями.
-                </p>
-              </div>
+              <p>
+                Выстраиваем транзитные маршруты поставок через третьи страны для
+                бесперебойной работы вашего бизнеса.
+              </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="transit"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-transit.png" alt="" />
             </article>
 
-            <article class="services-card services-card-cta">
-              <div>
-                <h3>Оставьте заявку на индивидуальную консультацию</h3>
+            <article class="services-card">
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
 
-                <p>
-                  Подготовим предложение под вашу задачу: стоимость, сроки,
-                  маршрут и схему выполнения.
-                </p>
-              </div>
+              <h3>Таможенное оформление</h3>
 
-              <a class="button_blue" href="#order"> Оставить заявку </a>
+              <p>
+                Обеспечиваем полное таможенное сопровождение грузов и подготовку
+                всей необходимой документации.
+              </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="customs"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-customs.png" alt="" />
             </article>
+
+            <article class="services-card">
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
+
+              <h3>Консолидация и складирование</h3>
+
+              <p>
+                Принимаем, консолидируем и храним грузы на территории Европы с
+                последующей отправкой.
+              </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="warehouse"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-warehouse.png" alt="" />
+            </article>
+
+            <article class="services-card">
+              <span class="services-card-icon" aria-hidden="true">&gt;</span>
+
+              <h3>Международные платежи</h3>
+
+              <p>
+                Организуем проведение международных платежей для внешнеторговых
+                сделок в условиях ограничений.
+              </p>
+
+              <button
+                class="services-card-more"
+                type="button"
+                data-service-modal="payments"
+              >
+                Подробнее
+              </button>
+
+              <img src="./Images/service-payment.png" alt="" />
+            </article>
+          </div>
+
+          <div class="services-bottom">
+            <p>Мы проведем бесплатный анализ вашей задачи</p>
+
+            <span>
+              Подберем эффективное решение под задачи вашего бизнеса,
+              учитывающее стоимость и сроки выполнения.
+            </span>
           </div>
         </div>
       </section>
 
-      <section class="trust-section" id="trust" aria-labelledby="trust-title">
-        <div class="trust-inner">
-          <div class="trust-head">
-            <p class="trust-label">Кто мы</p>
-
-            <h2 id="trust-title">
-              Работаем там,<br />
-              где другие не могут
-            </h2>
-
-            <p class="trust-lead">
-              В условиях санкций, ограничений и дефицита многие компании
-              столкнулись с разрушением привычных поставок. Мы не просто
-              адаптировались — мы выстроили новые устойчивые логистические
-              цепочки и сохранили доступ к европейским товарам.
-            </p>
-          </div>
-
-          <div class="trust-grid">
-            <article class="trust-card">
-              <span class="trust-card-icon" aria-hidden="true">&gt;</span>
-              <h3>Налаженные каналы поставок из Европы</h3>
-            </article>
-
-            <article class="trust-card">
-              <span class="trust-card-icon" aria-hidden="true">&gt;</span>
-              <h3>Опыт партнёров с десятилетней экспертизой</h3>
-            </article>
-
-            <article class="trust-card">
-              <span class="trust-card-icon" aria-hidden="true">&gt;</span>
-              <h3>Работа в условиях санкционных ограничений</h3>
-            </article>
-
-            <article class="trust-card">
-              <span class="trust-card-icon" aria-hidden="true">&gt;</span>
-              <h3>Снижение рисков для клиента</h3>
-            </article>
-
-            <article class="trust-card">
-              <span class="trust-card-icon" aria-hidden="true">&gt;</span>
-              <h3>Прозрачность на каждом этапе сделки</h3>
-            </article>
-          </div>
-        </div>
-      </section>
+      <span id="about" aria-hidden="true"></span>
 
       <section
-        class="business-section"
-        id="business"
-        aria-labelledby="business-title"
+        class="partners-section"
+        id="partners"
+        aria-labelledby="partners-title"
       >
-        <div class="business-inner">
-          <div class="business-head">
-            <p class="business-label">Для кого</p>
+        <div class="partners-inner">
+          <div class="partners-media">
+            <img
+              src="./Images/partners-photo.png"
+              alt="Команда работает над логистическим проектом"
+            />
+          </div>
 
-            <h2 id="business-title">
-              Работаем с бизнесом<br />
-              любого масштаба
+          <div class="partners-content">
+            <p class="partners-label">Партнерам</p>
+
+            <h2 id="partners-title">
+              Почему выбирают<br />
+              «Компас Групп»
             </h2>
 
-            <p class="business-subtitle">
-              Подбираем решения под задачи, объемы и возможности клиента
-            </p>
-          </div>
+            <div class="partners-list">
+              <article class="partners-card">
+                <span class="partners-card-icon" aria-hidden="true">&gt;</span>
 
-          <div class="business-grid">
-            <article class="business-card">
-              <div class="business-card-top">
-                <span class="business-card-label">Малый бизнес</span>
-                <span class="business-card-icon" aria-hidden="true">&gt;</span>
-              </div>
-
-              <div class="business-card-content">
-                <div class="business-group">
-                  <h3>Кому подходит:</h3>
-                  <ul>
-                    <li>Продавцы маркетплейсов WB, Ozon и др.</li>
-                    <li>Интернет-магазины</li>
-                    <li>Начинающие предприниматели</li>
-                  </ul>
-                </div>
-
-                <div class="business-group">
-                  <h3>Задачи:</h3>
-                  <ul>
-                    <li>Найти товар дешевле</li>
-                    <li>Минимизировать риски</li>
-                    <li>Начать без больших вложений</li>
-                  </ul>
-                </div>
-
-                <div class="business-group">
-                  <h3>Что даем:</h3>
-                  <ul>
-                    <li>Доступ к европейским товарам</li>
-                    <li>Возможность работать с небольшими объемами</li>
-                    <li>Полное сопровождение без опыта в ВЭД</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            <article class="business-card business-card-accent">
-              <div class="business-card-top">
-                <span class="business-card-label">Средний бизнес</span>
-                <span class="business-card-icon" aria-hidden="true">&gt;</span>
-              </div>
-
-              <div class="business-card-content">
-                <div class="business-group">
-                  <h3>Кому подходит:</h3>
-                  <ul>
-                    <li>Оптовые компании</li>
-                    <li>Сети магазинов</li>
-                    <li>Активные селлеры маркетплейсов</li>
-                    <li>Небольшие производства</li>
-                  </ul>
-                </div>
-
-                <div class="business-group">
-                  <h3>Задачи:</h3>
-                  <ul>
-                    <li>Стабильные поставки</li>
-                    <li>Рост маржинальности</li>
-                    <li>Прозрачная логистика</li>
-                  </ul>
-                </div>
-
-                <div class="business-group">
-                  <h3>Что даем:</h3>
-                  <ul>
-                    <li>Регулярные поставки</li>
-                    <li>Возможность заказа от паллеты</li>
-                    <li>Контроль сроков и стоимости</li>
-                    <li>Надежную цепочку поставок</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-            <article class="business-card business-card-large-company">
-              <div class="business-card-top">
-                <span class="business-card-label">Крупный бизнес</span>
-                <span class="business-card-icon" aria-hidden="true">&gt;</span>
-              </div>
-
-              <div class="business-card-content">
-                <div class="business-group">
-                  <h3>Кому подходит:</h3>
-                  <ul>
-                    <li>Производственные предприятия</li>
-                    <li>Заводы</li>
-                    <li>Компании, закупающие оборудование</li>
-                  </ul>
-                </div>
-
-                <div class="business-group">
-                  <h3>Задачи:</h3>
-                  <ul>
-                    <li>Надежность</li>
-                    <li>Работа с объемами</li>
-                    <li>Юридическая прозрачность</li>
-                  </ul>
-                </div>
-
-                <div class="business-group">
-                  <h3>Что даем:</h3>
-                  <ul>
-                    <li>Контроль поставок</li>
-                    <li>Работа с крупными партиями</li>
-                    <li>Выстроенные процессы</li>
-                    <li>Минимизация рисков</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="consultation-section"
-        id="order"
-        aria-labelledby="consultation-title"
-      >
-        <div class="consultation-inner">
-          <div class="consultation-content">
-            <p class="consultation-label">Заявка на расчет</p>
-
-            <h2 id="consultation-title">
-              Начните поставки<br />
-              из Европы без рисков
-            </h2>
-
-            <p class="consultation-text">
-              Оставьте заявку — и мы предложим конкретное решение под вашу
-              задачу. Вы получите расчёт сроков и стоимости, а также
-              персонального менеджера, который будет сопровождать вас на всех
-              этапах.
-            </p>
-          </div>
-
-          <form class="consultation-form" action="./send.php" method="post">
-            <div class="consultation-form-head">
-              <h3>Получить расчет и бесплатную консультацию</h3>
-
-              <p>
-                Оставьте контакты — мы свяжемся с вами и предложим решение под
-                вашу задачу.
-              </p>
-            </div>
-
-            <div class="consultation-form-fields">
-              <label class="consultation-field">
-                <span>Ваше имя</span>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Ваше имя"
-                  autocomplete="name"
-                  required
-                />
-              </label>
-
-              <label class="consultation-field">
-                <span>Телефон</span>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="+375 00 000 00 00"
-                  autocomplete="tel"
-                  required
-                />
-              </label>
-
-              <label class="consultation-field">
-                <span>Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Ваш e-mail"
-                  autocomplete="email"
-                />
-              </label>
-
-              <label class="consultation-field">
-                <span>Компания</span>
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Компания / ИП"
-                  autocomplete="organization"
-                />
-              </label>
-
-              <label class="consultation-field consultation-field-full">
-                <span>Что нужно привезти?</span>
-                <textarea
-                  name="message"
-                  placeholder="Опишите товар, страну, объем или задачу"
-                  required
-                ></textarea>
-              </label>
-            </div>
-
-            <label class="consultation-checkbox">
-              <input type="checkbox" name="privacy" required />
-              <span>
-                Я согласен на обработку персональных данных и принимаю политику
-                конфиденциальности
-              </span>
-            </label>
-
-            <button class="button_blue" type="submit">
-              Получить бесплатную консультацию
-            </button>
-          </form>
-
-          <div class="consultation-manager">
-            <div class="consultation-manager-photo">
-              <img src="./Images/manager.jpg" alt="Персональный менеджер" />
-            </div>
-
-            <div class="consultation-manager-info">
-              <strong>Ольга Шолл</strong>
-              <span>Коммерческий директор</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="company-section"
-        id="company"
-        aria-labelledby="company-title"
-      >
-        <div class="company-inner">
-          <div class="company-head">
-            <p class="company-label">О компании</p>
-
-            <h2 id="company-title">
-              «Компас Групп» — международная торговая компания с европейской
-              экспертизой
-            </h2>
-          </div>
-
-          <div class="company-content">
-            <div class="company-text">
-              <p>
-                «Компас Групп» специализируется на комплексной организации
-                поставок товаров из Европы в Россию, Беларусь и другие страны
-                СНГ. Мы строим стабильные каналы поставок для бизнеса в
-                условиях, когда стандартные маршруты перестали быть надёжными.
-              </p>
-
-              <p>
-                В основе нашей работы — выстроенная сеть европейских партнёров,
-                чей опыт в международной торговле превышает 10 лет. Это даёт нам
-                уникальную возможность находить законные, прозрачные и
-                гарантированные пути поставок, которые недоступны большинству
-                участников рынка.
-              </p>
-
-              <p>
-                Мы не просто логистический оператор. Мы берём на себя все этапы
-                сделки: от поиска товара и переговоров с поставщиками до выкупа
-                в Европе и доставки на склад клиента.
-              </p>
-
-              <p>
-                Наш клиент получает готовое решение и полную отчётность, не
-                вникая в тонкости ВЭД, таможенного оформления и транспортных
-                рисков.
-              </p>
-            </div>
-
-            <div class="company-principles" aria-label="Четыре принципа работы">
-              <article class="company-principle">
-                <span class="company-principle-icon" aria-hidden="true"
-                  >&gt;</span
-                >
-
-                <h3>Ответственность за результат</h3>
+                <h3>Международная экспертиза</h3>
 
                 <p>
-                  Мы несём ответственность перед клиентом на каждом этапе — от
-                  подбора поставщика до получения товара.
+                  Мы глубоко понимаем специфику внешнеэкономической деятельности
+                  и на практике решаем задачи любой сложности — от стандартных
+                  поставок до нестандартных логистических и торговых кейсов.
                 </p>
               </article>
 
-              <article class="company-principle">
-                <span class="company-principle-icon" aria-hidden="true"
-                  >&gt;</span
-                >
+              <article class="partners-card">
+                <span class="partners-card-icon" aria-hidden="true">&gt;</span>
 
-                <h3>Прозрачность без исключений</h3>
+                <h3>Сильная партнерская экосистема</h3>
 
                 <p>
-                  Вы видите всю цепочку сделки: документы, сроки, стоимость.
-                  Никаких скрытых комиссий и «серых» звеньев.
+                  Работаем через проверенную сеть поставщиков, логистических и
+                  финансовых партнеров в разных странах, что позволяет находить
+                  устойчивые решения даже в сложных условиях рынка.
                 </p>
               </article>
 
-              <article class="company-principle">
-                <span class="company-principle-icon" aria-hidden="true"
-                  >&gt;</span
-                >
+              <article class="partners-card">
+                <span class="partners-card-icon" aria-hidden="true">&gt;</span>
 
-                <h3>Работа там, где другие говорят «невозможно»</h3>
+                <h3>Высокий уровень сервиса</h3>
 
                 <p>
-                  Санкционные ограничения не останавливают нас, а заставляют
-                  искать работающие и полностью законные альтернативы.
+                  Сопровождаем клиента на всех этапах сделки — от первичного
+                  запроса до финальной поставки. Быстро реагируем на изменения и
+                  обеспечиваем прозрачную коммуникацию.
                 </p>
               </article>
 
-              <article class="company-principle">
-                <span class="company-principle-icon" aria-hidden="true"
-                  >&gt;</span
-                >
+              <article class="partners-card">
+                <span class="partners-card-icon" aria-hidden="true">&gt;</span>
 
-                <h3>Персональное сопровождение</h3>
+                <h3>Экспертное знание ВЭД</h3>
 
                 <p>
-                  За вами закреплён один менеджер, который координирует весь
-                  процесс и всегда на связи.
+                  Свободно ориентируемся в нетарифных ограничениях,
+                  классификации товаров по ТН ВЭД и валютном контроле. Это не
+                  просто знание теории, а умение найти законный и оптимальный
+                  путь для сделок, которые другие сочли бы «непроходными».
+                </p>
+              </article>
+
+              <article class="partners-card">
+                <span class="partners-card-icon" aria-hidden="true">&gt;</span>
+
+                <h3>Гибкость и лояльность</h3>
+
+                <p>
+                  Подстраиваем решения под конкретные цели клиента — масштаб,
+                  бюджет, географию поставок и специфику товара. У нас нет
+                  шаблонных решений.
                 </p>
               </article>
             </div>
           </div>
 
-          <div class="company-bottom">
+          <div class="partners-bottom">
             <p>
-              Компания создана для тех, кто ценит стабильность и хочет получить
-              товар из Европы в срок, с полным пакетом документов и без
-              репутационных рисков.
+              Международная торговля и логистика для бизнеса любого масштаба
             </p>
+
+            <span>
+              Компания «Компас Групп» помогает бизнесу выстраивать стабильные
+              поставки, находить надежных партнеров и организовывать
+              международную логистику в условиях меняющегося рынка. Мы работаем
+              с компаниями разного масштаба — от начинающих предпринимателей до
+              крупных производственных предприятий.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="consultation-section" id="consultation">
+        <div class="consultation-inner">
+          <div class="consultation-banner">
+            <div class="consultation-copy">
+              <h2>Получи бесплатную консультацию от наших экспертов</h2>
+
+              <p>
+                Оставьте заявку — и мы предложим конкретное решение под вашу
+                задачу. ООО «Компас групп» ваш надежный партнер в международной
+                торговле!
+              </p>
+            </div>
+
+            <div class="consultation-card">
+              <form class="consultation-form" action="#" method="post">
+                <div class="consultation-form-fields">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Имя"
+                    autocomplete="name"
+                    required
+                  />
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Телефон"
+                    autocomplete="tel"
+                    required
+                  />
+
+                  <label class="consultation-checkbox">
+                    <input type="checkbox" name="agreement" required />
+                    <span>Я соглашаюсь на обработку персональных данных</span>
+                  </label>
+
+                  <button type="submit" class="consultation-submit">
+                    Получить консультацию
+                  </button>
+                </div>
+              </form>
+
+              <div class="consultation-manager">
+                <div class="consultation-manager-photo">
+                  <img
+                    src="./Images/manager-photo.jpg"
+                    alt="Менеджер Компас Групп"
+                  />
+                </div>
+
+                <div class="consultation-manager-info">
+                  <strong>Ваш менеджер</strong>
+                  <span>Специалист Компас Групп</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -736,275 +511,172 @@
       >
         <div class="reviews-inner">
           <div class="reviews-head">
-            <p class="reviews-label">Отзывы</p>
+            <p class="reviews-label">Видеоотзывы</p>
 
-            <h2 id="reviews-title">Что говорят клиенты</h2>
+            <h2 id="reviews-title">Отзывы</h2>
 
-            <button class="button_blue reviews-open" type="button">
-              Оставить отзыв
-            </button>
-          </div>
+            <div class="reviews-controls">
+              <button
+                class="reviews-arrow reviews-prev"
+                type="button"
+                aria-label="Предыдущий отзыв"
+              >
+                ‹
+              </button>
 
-          <div class="reviews-grid">
-            <article class="review-card">
-              <p>
-                «Когда ввели очередные ограничения, наш многолетний поставщик из
-                Европы просто перестал отгружать. „Компас Групп“ за две недели
-                нашла трёх новых производителей, проверила их и выкупила первую
-                партию. Мы получили товар с полным пакетом документов, как будто
-                никаких санкций нет. Работаем с ними уже больше года».
-              </p>
-
-              <div class="review-author">
-                <strong>Алексей</strong>
-                <span
-                  >Руководитель отдела закупок производственной компании</span
-                >
-              </div>
-            </article>
-
-            <article class="review-card">
-              <p>
-                «Раньше боялись напрямую выходить на европейцев — казалось, что
-                это лабиринт из переговоров, валютных платежей и таможни.
-                „Компас Групп“ полностью сняла с нас эту головную боль.
-                Персональный менеджер вёл сделку от запроса до доставки. Мы
-                просто получили нужный ассортимент в свой магазин».
-              </p>
-
-              <div class="review-author">
-                <strong>Марина</strong>
-                <span>Директор торгового дома, Беларусь</span>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <p>
-                «Искали редкое оборудование — стандартные каналы не давали
-                результата. В „Компас Групп“ не только нашли нужных поставщиков,
-                но и разработали абсолютно прозрачную логистику. На каждом этапе
-                мы получали отчётность. Сэкономили время, нервы и деньги».
-              </p>
-
-              <div class="review-author">
-                <strong>Игорь</strong>
-                <span>Управляющий сети медицинского оборудования, Россия</span>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <p>
-                «Приятно, когда тебя не перебрасывают между отделами. Твой
-                менеджер помнит все детали заказа и решает вопросы, даже если
-                время в стране поставщика — полночь. Всё чётко, без сюрпризов».
-              </p>
-
-              <div class="review-author">
-                <strong>Ольга</strong>
-                <span>Предприниматель, Казахстан</span>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <p>
-                «Два года назад наш ключевой поставщик из Италии полностью
-                остановил отгрузки в Беларусь. Обратились в „Компас Групп“. Они
-                не просто нашли аналог нужных комплектующих, а выстроили новый
-                канал через проверенного европейского посредника с полным
-                документальным сопровождением. Теперь поставки идут стабильно, а
-                мы забыли, что такое ажиотажный поиск запчастей».
-              </p>
-
-              <div class="review-author">
-                <strong>Сергей</strong>
-                <span>Директор производственного предприятия, Минск</span>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <p>
-                «Мы расширяли ассортимент за счёт европейской бытовой химии и
-                косметики, но столкнулись с отказом большинства производителей
-                работать с Беларусью напрямую. „Компас Групп“ провела переговоры
-                от нашего имени, выкупила тестовую партию на свою европейскую
-                структуру и доставила в Гомель под ключ. Сейчас работаем на
-                постоянной основе, вся логистика прозрачна, как и отчётность».
-              </p>
-
-              <div class="review-author">
-                <strong>Татьяна</strong>
-                <span>Управляющая торговой сетью, Гомель</span>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <p>
-                «Санкции разорвали наши многолетние цепочки поставок
-                оборудования из Германии. „Компас Групп“ смогла оперативно найти
-                альтернативных производителей в нейтральных странах ЕС,
-                проверить их и выкупить первую партию. Производство не
-                останавливалось ни на день. Это не просто логистика, это
-                стратегическое партнёрство».
-              </p>
-
-              <div class="review-author">
-                <strong>Дмитрий</strong>
-                <span
-                  >Генеральный директор машиностроительного завода,
-                  Екатеринбург</span
-                >
-              </div>
-            </article>
-
-            <article class="review-card">
-              <p>
-                «Искали новых поставщиков из Европы взамен ушедших. „Компас
-                Групп“ в сжатые сроки отобрала пять надёжных фабрик, провела
-                аудит и переговоры, а затем обеспечила первую поставку. Сейчас
-                мы совместно масштабируем объёмы. Особо отмечу персонального
-                менеджера — все вопросы решаются без бюрократии».
-              </p>
-
-              <div class="review-author">
-                <strong>Елена</strong>
-                <span
-                  >Коммерческий директор дистрибьюторской компании, Москва</span
-                >
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <div class="review-modal" id="review-modal" aria-hidden="true">
-        <div class="review-modal-overlay" data-review-close></div>
-
-        <div
-          class="review-modal-window"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="review-modal-title"
-        >
-          <button
-            class="review-modal-close"
-            type="button"
-            aria-label="Закрыть окно"
-            data-review-close
-          >
-            ×
-          </button>
-
-          <div class="review-modal-head">
-            <p class="review-modal-label">Комментарий</p>
-            <h2 id="review-modal-title">Оставить отзыв</h2>
-          </div>
-
-          <form class="review-form" action="./send-review.php" method="post">
-            <label>
-              <span>Ваше имя</span>
-              <input type="text" name="name" placeholder="Ваше имя" required />
-            </label>
-
-            <label>
-              <span>Компания / должность</span>
-              <input
-                type="text"
-                name="company"
-                placeholder="Компания / должность"
-              />
-            </label>
-
-            <label>
-              <span>Ваш отзыв</span>
-              <textarea
-                name="review"
-                placeholder="Напишите ваш отзыв"
-                required
-              ></textarea>
-            </label>
-
-            <button class="button_blue" type="submit">Отправить отзыв</button>
-          </form>
-        </div>
-      </div>
-
-      <section
-        class="final-section"
-        id="contacts"
-        aria-labelledby="final-title"
-      >
-        <div class="final-inner">
-          <div class="final-content">
-            <p class="final-label">Мы работаем, звоните</p>
-
-            <h2 id="final-title">Остались вопросы?</h2>
-
-            <p>
-              Оставьте заявку — позвоним вам в течение 10 минут и подскажем, как
-              организовать поставку под вашу задачу.
-            </p>
-          </div>
-
-          <form class="final-form" action="./send.php" method="post">
-            <div class="final-fields">
-              <label>
-                <span>Ваше имя</span>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Ваше имя"
-                  required
-                />
-              </label>
-
-              <label>
-                <span>Телефон</span>
-                <input type="tel" name="phone" placeholder="Телефон" required />
-              </label>
-
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="Ваш e-mail" />
-              </label>
+              <button
+                class="reviews-arrow reviews-next"
+                type="button"
+                aria-label="Следующий отзыв"
+              >
+                ›
+              </button>
             </div>
+          </div>
 
-            <label class="final-checkbox">
-              <input type="checkbox" name="privacy" required />
-              <span>
-                Я согласен на обработку персональных данных в соответствии с
-                политикой конфиденциальности
-              </span>
-            </label>
+          <div class="reviews-slider" aria-label="Слайдер видеоотзывов">
+            <div class="reviews-track">
+              <article class="review-video-card">
+                <div class="review-video-info">
+                  <h3>ООО «Зубастик»</h3>
+                  <p>Поиск товара</p>
+                </div>
 
-            <button class="button_blue final-button" type="submit">
-              Получить консультацию
-            </button>
-          </form>
+                <div class="review-video">
+                  <video poster="./Images/review-1.jpg" muted playsinline>
+                    <source src="./Videos/review-1.mp4" type="video/mp4" />
+                  </video>
 
-          <div class="final-manager">
-            <div class="final-manager-photo">
-              <img src="./Images/manager.jpg" alt="Персональный менеджер" />
-            </div>
+                  <button
+                    class="review-play"
+                    type="button"
+                    aria-label="Смотреть видеоотзыв"
+                  >
+                    ▶
+                  </button>
+                </div>
+              </article>
 
-            <div class="final-manager-info">
-              <strong>Персональный менеджер</strong>
-              <span>Сопроводит заявку от первого звонка до результата</span>
+              <article class="review-video-card">
+                <div class="review-video-info">
+                  <h3>ТД «Север»</h3>
+                  <p>Импорт</p>
+                </div>
+
+                <div class="review-video">
+                  <video poster="./Images/review-2.jpg" muted playsinline>
+                    <source src="./Videos/review-2.mp4" type="video/mp4" />
+                  </video>
+
+                  <button
+                    class="review-play"
+                    type="button"
+                    aria-label="Смотреть видеоотзыв"
+                  >
+                    ▶
+                  </button>
+                </div>
+              </article>
+
+              <article class="review-video-card">
+                <div class="review-video-info">
+                  <h3>ООО «МедТехника»</h3>
+                  <p>Таможенное оформление</p>
+                </div>
+
+                <div class="review-video">
+                  <video poster="./Images/review-3.jpg" muted playsinline>
+                    <source src="./Videos/review-3.mp4" type="video/mp4" />
+                  </video>
+
+                  <button
+                    class="review-play"
+                    type="button"
+                    aria-label="Смотреть видеоотзыв"
+                  >
+                    ▶
+                  </button>
+                </div>
+              </article>
+
+              <article class="review-video-card">
+                <div class="review-video-info">
+                  <h3>ООО «ПромКомплект»</h3>
+                  <p>Транзит</p>
+                </div>
+
+                <div class="review-video">
+                  <video poster="./Images/review-4.jpg" muted playsinline>
+                    <source src="./Videos/review-4.mp4" type="video/mp4" />
+                  </video>
+
+                  <button
+                    class="review-play"
+                    type="button"
+                    aria-label="Смотреть видеоотзыв"
+                  >
+                    ▶
+                  </button>
+                </div>
+              </article>
+
+              <article class="review-video-card">
+                <div class="review-video-info">
+                  <h3>ИП Коваль</h3>
+                  <p>Международные платежи</p>
+                </div>
+
+                <div class="review-video">
+                  <video poster="./Images/review-5.jpg" muted playsinline>
+                    <source src="./Videos/review-5.mp4" type="video/mp4" />
+                  </video>
+
+                  <button
+                    class="review-play"
+                    type="button"
+                    aria-label="Смотреть видеоотзыв"
+                  >
+                    ▶
+                  </button>
+                </div>
+              </article>
+
+              <article class="review-video-card">
+                <div class="review-video-info">
+                  <h3>ООО «БелХим»</h3>
+                  <p>Консолидация и складирование</p>
+                </div>
+
+                <div class="review-video">
+                  <video poster="./Images/review-6.jpg" muted playsinline>
+                    <source src="./Videos/review-6.mp4" type="video/mp4" />
+                  </video>
+
+                  <button
+                    class="review-play"
+                    type="button"
+                    aria-label="Смотреть видеоотзыв"
+                  >
+                    ▶
+                  </button>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contacts">
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="#top" class="footer-logo" aria-label="Компас Групп">
-            <img src="./Images/logo_compass_group_ru.svg" alt="Компас Групп" />
+            <img src="./Images/logo_compass_group.svg" alt="Компас Групп" />
           </a>
 
           <p>
-            Международные поставки товаров из Европы для бизнеса в Беларуси,
-            России и странах СНГ.
+            Международные поставки товаров для бизнеса в Беларуси, России и
+            странах СНГ.
           </p>
         </div>
 
@@ -1013,9 +685,9 @@
 
           <nav class="footer-nav" aria-label="Навигация в подвале">
             <a href="#services">Услуги</a>
-            <a href="#business">Для кого</a>
+            <a href="#partners">Партнерам</a>
+            <a href="#about">О компании</a>
             <a href="#reviews">Отзывы</a>
-            <a href="#company">О компании</a>
             <a href="#contacts">Контакты</a>
           </nav>
         </div>
@@ -1025,9 +697,9 @@
 
           <nav class="footer-nav" aria-label="Документы">
             <a href="./privacy.html">Политика конфиденциальности</a>
-            <a href="./personal-data.html"
-              >Политика обработки персональных данных</a
-            >
+            <a href="./personal-data.html">
+              Политика обработки персональных данных
+            </a>
           </nav>
         </div>
 
@@ -1035,9 +707,9 @@
           <h3>Контакты</h3>
 
           <a href="tel:+375445009509">+375 44 500 95 09</a>
-          <a href="mailto:compass.group.by@gmail.com"
-            >compass.group.by@gmail.com</a
-          >
+          <a href="mailto:compass.group.by@gmail.com">
+            compass.group.by@gmail.com
+          </a>
 
           <p>г. Гродно, ул. Буденного 41, каб. 2.04</p>
 
@@ -1052,6 +724,128 @@
         <p>© 2025 Компас Групп. Все права защищены.</p>
       </div>
     </footer>
+
+    <div class="consultation-modal" id="consultation-modal" aria-hidden="true">
+      <div class="consultation-modal-overlay" data-consultation-close></div>
+
+      <div
+        class="consultation-modal-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="consultation-modal-title"
+      >
+        <button
+          class="consultation-modal-close"
+          type="button"
+          aria-label="Закрыть окно"
+          data-consultation-close
+        >
+          ×
+        </button>
+
+        <div class="consultation-modal-content">
+          <div class="consultation-modal-text">
+            <p class="consultation-modal-label">Заявка</p>
+
+            <h2 id="consultation-modal-title">
+              Получи бесплатную консультацию от наших экспертов
+            </h2>
+
+            <p>
+              Оставьте заявку — и мы предложим конкретное решение под вашу
+              задачу. ООО «Компас Групп» — ваш надежный партнер в международной
+              торговле!
+            </p>
+          </div>
+
+          <div class="consultation-modal-manager">
+            <div class="consultation-modal-photo">
+              <img src="./Images/manager.jpg" alt="Персональный менеджер" />
+            </div>
+
+            <div class="consultation-modal-manager-info">
+              <strong>Персональный менеджер</strong>
+              <span>Свяжется с вами и подберёт решение</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="consultation-modal-form" action="./send.php" method="post">
+          <label>
+            <span>Имя</span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Ваше имя"
+              autocomplete="name"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Телефон</span>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+375 00 000 00 00"
+              autocomplete="tel"
+              required
+            />
+          </label>
+
+          <label class="consultation-modal-checkbox">
+            <input type="checkbox" name="privacy" required />
+
+            <span>
+              Я согласен на обработку персональных данных и принимаю политику
+              конфиденциальности
+            </span>
+          </label>
+
+          <button class="button_blue consultation-modal-submit" type="submit">
+            Получить консультацию
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="service-modal" id="service-modal" aria-hidden="true">
+      <div class="service-modal-overlay" data-service-close></div>
+
+      <div
+        class="service-modal-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="service-modal-title"
+      >
+        <button
+          class="service-modal-close"
+          type="button"
+          aria-label="Закрыть окно"
+          data-service-close
+        >
+          ×
+        </button>
+
+        <div class="service-modal-content">
+          <p class="service-modal-label">Подробнее</p>
+
+          <h2 id="service-modal-title">Поиск товара</h2>
+
+          <p class="service-modal-intro">Что входит в услугу:</p>
+
+          <div class="service-modal-text" id="service-modal-text"></div>
+
+          <button
+            class="service-modal-order consultation-modal-open"
+            type="button"
+            data-service-close
+          >
+            Заказать
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
