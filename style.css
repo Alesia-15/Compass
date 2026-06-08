@@ -55,7 +55,7 @@
   --shadow-header: 0 14px 38px rgba(21, 25, 24, 0.08);
 
   --container: 1280px;
-  --header-height: 74px;
+  --header-height: 32px;
   --section-gap: 32px;
   --section-padding-x: 48px;
 }
