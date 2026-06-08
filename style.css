@@ -55,7 +55,7 @@
   --shadow-header: 0 14px 38px rgba(21, 25, 24, 0.08);
 
   --container: 1280px;
-  --header-height: 88px;
+  --header-height: 74px;
   --section-gap: 32px;
   --section-padding-x: 48px;
 }
@@ -66,7 +66,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 24px);
+  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -96,11 +96,11 @@ section,
 footer,
 #about,
 #contacts {
-  scroll-margin-top: calc(var(--header-height) + 24px);
+  scroll-margin-top: var(--header-height);
 }
 
 main {
-  padding-top: calc(var(--header-height) + 8px);
+  padding-top: var(--header-height);
 }
 
 h1,
@@ -186,7 +186,7 @@ button {
   z-index: 1000;
 
   width: 100%;
-  padding: 12px 48px;
+  padding: 0 32px;
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
@@ -194,17 +194,18 @@ button {
 .header-inner {
   width: 100%;
   max-width: var(--container);
-  min-height: 58px;
+  min-height: var(--header-height);
   margin: 0 auto;
-  padding: 8px 14px 8px 18px;
+  padding: 8px 16px 8px 18px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 18px;
 
   border: 1px solid var(--border);
-  border-radius: 22px;
+  border-top: 0;
+  border-radius: 0 0 24px 24px;
 
   background: rgba(246, 246, 242, 0.97);
   box-shadow: var(--shadow-header);
@@ -687,32 +688,35 @@ button {
 /* SERVICES */
 
 .services-section {
+  height: calc(100svh - var(--header-height));
   max-height: calc(100svh - var(--header-height));
-  padding: 0 var(--section-padding-x) var(--section-gap);
+  padding: 0 var(--section-padding-x) 20px;
   background: var(--light);
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .services-top {
   width: 100%;
   max-width: 980px;
-  margin: 0 auto 16px;
+  margin: 0 auto 12px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 0 0 auto;
 }
 
 .services-top-title {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 
   color: #6b5cff;
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(18px, 1.3vw, 23px);
+  font-size: clamp(16px, 1.15vw, 20px);
   font-weight: 700;
   line-height: 1.15;
   text-align: center;
@@ -746,7 +750,7 @@ button {
 
 .services-search input {
   width: 100%;
-  height: 40px;
+  height: 36px;
   padding: 0 18px 0 42px;
 
   border: 1px solid rgba(107, 92, 255, 0.12);
@@ -783,12 +787,16 @@ button {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 26px 36px 0;
+  padding: 18px 32px 0;
 
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
 
   border: 1px solid var(--border);
-  border-radius: 34px;
+  border-radius: 30px;
 
   background: #eeeeef;
 
@@ -799,11 +807,12 @@ button {
   position: relative;
   z-index: 2;
 
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 26px;
+  flex: 0 0 auto;
 }
 
 .services-label {
@@ -845,7 +854,7 @@ button {
   color: var(--dark);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(44px, 4.8vw, 70px);
+  font-size: clamp(36px, 4vw, 56px);
   font-weight: 760;
   line-height: 1;
   letter-spacing: 0;
@@ -858,14 +867,16 @@ button {
 
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .services-card {
   position: relative;
 
-  min-height: 256px;
-  padding: 20px;
+  min-height: 0;
+  padding: 18px;
 
   display: flex;
   flex-direction: column;
@@ -956,7 +967,7 @@ button {
   color: var(--dark);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(19px, 1.35vw, 25px);
+  font-size: clamp(17px, 1.18vw, 22px);
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: 0;
@@ -968,14 +979,14 @@ button {
   z-index: 4;
 
   max-width: 250px;
-  margin: 14px 0 0;
+  margin: 10px 0 0;
 
   color: rgba(21, 25, 24, 0.66);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-size: clamp(11px, 0.86vw, 12.5px);
   font-weight: 400;
-  line-height: 1.38;
+  line-height: 1.32;
   text-transform: none;
 }
 
@@ -1013,11 +1024,11 @@ button {
 .services-card img {
   position: absolute;
   right: -6px;
-  bottom: 8px;
+  bottom: 6px;
   z-index: 1;
 
-  width: 50%;
-  max-width: 142px;
+  width: 46%;
+  max-width: 132px;
   height: auto;
 
   opacity: 0.82;
@@ -1042,13 +1053,14 @@ button {
   position: relative;
   z-index: 2;
 
-  margin: 14px -36px 0;
-  padding: 22px 36px 24px;
+  margin: 10px -32px 0;
+  padding: 16px 32px 18px;
 
   background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
   color: var(--light);
 
   text-align: center;
+  flex: 0 0 auto;
 }
 
 .services-bottom p {
@@ -1058,7 +1070,7 @@ button {
   color: var(--light);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(30px, 3.2vw, 48px);
+  font-size: clamp(24px, 2.4vw, 38px);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: 0;
@@ -1070,26 +1082,28 @@ button {
   display: block;
 
   max-width: 920px;
-  margin: 12px auto 0;
+  margin: 8px auto 0;
 
   color: rgba(246, 246, 242, 0.92);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(15px, 1.25vw, 20px);
+  font-size: clamp(13px, 1vw, 16px);
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.3;
   text-transform: none;
 }
 
 /* PARTNERS */
 
 .partners-section {
+  height: calc(100svh - var(--header-height));
   max-height: calc(100svh - var(--header-height));
-  padding: 0 var(--section-padding-x) var(--section-gap);
+  padding: 0 var(--section-padding-x) 20px;
   background: var(--light);
 
   display: flex;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .partners-inner {
@@ -1098,16 +1112,16 @@ button {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 28px 36px 0;
+  padding: 22px 32px 0;
 
   display: grid;
-  grid-template-columns: minmax(340px, 0.86fr) minmax(0, 1.14fr);
-  gap: 30px;
+  grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
+  gap: 24px;
 
   overflow: hidden;
 
   border: 1px solid var(--border);
-  border-radius: 34px;
+  border-radius: 30px;
 
   background: #eeeeef;
 
@@ -1118,12 +1132,13 @@ button {
   position: relative;
   z-index: 2;
 
-  min-height: 560px;
-  max-height: calc(100svh - var(--header-height) - 170px);
+  min-height: 0;
+  height: 100%;
+  max-height: calc(100svh - var(--header-height) - 126px);
 
   overflow: hidden;
 
-  border-radius: 26px 26px 0 0;
+  border-radius: 24px 24px 0 0;
   background: rgba(21, 25, 24, 0.08);
 }
 
@@ -1145,8 +1160,8 @@ button {
 
 .partners-label {
   width: fit-content;
-  margin: 0 0 18px;
-  padding: 9px 18px;
+  margin: 0 0 12px;
+  padding: 8px 16px;
 
   display: inline-flex;
   align-items: center;
@@ -1159,7 +1174,7 @@ button {
   color: rgba(21, 25, 24, 0.72);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   line-height: 1;
   text-transform: none;
@@ -1178,12 +1193,12 @@ button {
 }
 
 .partners-content h2 {
-  margin: 0 0 22px;
+  margin: 0 0 16px;
 
   color: var(--dark);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(38px, 4vw, 58px);
+  font-size: clamp(30px, 3.25vw, 48px);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: 0;
@@ -1198,8 +1213,8 @@ button {
 .partners-card {
   position: relative;
 
-  min-height: 104px;
-  padding: 18px 72px 18px 22px;
+  min-height: 82px;
+  padding: 14px 68px 14px 20px;
 
   overflow: hidden;
 
@@ -1287,7 +1302,7 @@ button {
   color: var(--dark);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(17px, 1.25vw, 22px);
+  font-size: clamp(16px, 1.1vw, 19px);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0;
@@ -1299,12 +1314,12 @@ button {
   z-index: 2;
 
   max-width: 680px;
-  margin: 10px 0 0;
+  margin: 7px 0 0;
 
   color: rgba(21, 25, 24, 0.66);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.38;
   text-transform: none;
@@ -1316,8 +1331,8 @@ button {
 
   grid-column: 1 / -1;
 
-  margin: 0 -36px;
-  padding: 22px 36px 26px;
+  margin: 0 -32px;
+  padding: 16px 32px 18px;
 
   background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
   color: var(--light);
@@ -1332,7 +1347,7 @@ button {
   color: var(--light);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(28px, 2.8vw, 44px);
+  font-size: clamp(24px, 2.35vw, 36px);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: 0;
@@ -1344,14 +1359,14 @@ button {
   display: block;
 
   max-width: 980px;
-  margin: 12px auto 0;
+  margin: 8px auto 0;
 
   color: rgba(246, 246, 242, 0.92);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(14px, 1.12vw, 18px);
+  font-size: clamp(13px, 0.95vw, 16px);
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.32;
   text-transform: none;
 }
 
@@ -2659,11 +2674,11 @@ button {
 @media (max-width: 1100px) {
   :root {
     --section-padding-x: 24px;
-    --header-height: 84px;
+    --header-height: 70px;
   }
 
   .site-header {
-    padding: 12px 24px;
+    padding: 0 16px;
   }
 
   .nav,
@@ -2680,8 +2695,11 @@ button {
   .partners-section,
   .consultation-section,
   .reviews-section {
+    height: auto;
+    max-height: none;
     min-height: auto;
     padding-bottom: var(--section-gap);
+    overflow: visible;
   }
 
   .video-banner {
@@ -2714,7 +2732,7 @@ button {
   }
 
   .services-card {
-    min-height: 315px;
+    min-height: 285px;
   }
 
   .services-card img {
@@ -2734,7 +2752,8 @@ button {
   }
 
   .partners-media {
-    min-height: 390px;
+    min-height: 320px;
+    height: auto;
     max-height: none;
     border-radius: 26px;
   }
@@ -2861,17 +2880,17 @@ button {
   :root {
     --section-padding-x: 12px;
     --section-gap: 26px;
-    --header-height: 78px;
+    --header-height: 66px;
   }
 
   .site-header {
-    padding: 10px 12px;
+    padding: 0 10px;
   }
 
   .header-inner {
-    min-height: 56px;
+    min-height: var(--header-height);
     padding: 8px 10px;
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
   }
 
   .logo {
