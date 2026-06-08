@@ -1,24 +1,31 @@
 @font-face {
-  font-family: "Adderley";
-  src: url("./Fonts/Adderley/Adderley-Regular.otf") format("opentype");
-  font-weight: 500;
+  font-family: "Bebas Neue";
+  src: url("./Fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Adderley";
-  src: url("./Fonts/Adderley/Adderley-Bold.otf") format("opentype");
-  font-weight: 700;
+  font-family: "Inter";
+  src: url("./Fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Neutral Face";
-  src:
-    url("./Fonts/NeutralFace/NeutralFaceRegular.woff2") format("woff2"),
-    url("./Fonts/NeutralFace/NeutralFaceRegular.woff") format("woff");
+  src: url("./Fonts/Neutral_face/NeutralFace.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,9 +33,7 @@
 
 @font-face {
   font-family: "Neutral Face";
-  src:
-    url("./Fonts/NeutralFace/NeutralFaceBold.woff2") format("woff2"),
-    url("./Fonts/NeutralFace/NeutralFaceBold.woff") format("woff");
+  src: url("./Fonts/Neutral_face/NeutralFace-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -40,14 +45,18 @@
   --light: #f6f6f2;
   --white: #ffffff;
   --blue: #0e44f3;
+
   --text-main: rgba(21, 25, 24, 0.94);
-  --text-soft: rgba(21, 25, 24, 0.72);
+  --text-soft: rgba(21, 25, 24, 0.68);
+
   --border: rgba(21, 25, 24, 0.12);
   --border-light: rgba(246, 246, 242, 0.14);
+
   --shadow-header: 0 14px 38px rgba(21, 25, 24, 0.08);
+
   --container: 1280px;
-  --header-height: 94px;
-  --section-gap: 40px;
+  --header-height: 88px;
+  --section-gap: 32px;
   --section-padding-x: 48px;
 }
 
@@ -57,7 +66,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 22px);
+  scroll-padding-top: calc(var(--header-height) + 24px);
 }
 
 body {
@@ -65,7 +74,7 @@ body {
   min-height: 100vh;
   background: var(--light);
   color: var(--dark);
-  font-family: "Adderley", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 body.is-menu-open {
@@ -76,18 +85,23 @@ a {
   color: inherit;
 }
 
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 section,
 footer,
 #about,
 #contacts {
-  scroll-margin-top: calc(var(--header-height) + 22px);
+  scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
 main {
   padding-top: calc(var(--header-height) + 8px);
 }
-
-/* TYPOGRAPHY SYSTEM */
 
 h1,
 h2,
@@ -95,52 +109,42 @@ h3,
 h4,
 h5,
 h6,
-.section-title,
-.block-title,
-.card-title {
-  font-family: "Adderley", Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
+p {
+  margin-top: 0;
 }
 
-p,
-li,
-.section-text,
-.block-text,
-.card-text {
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  text-transform: none;
+button {
+  cursor: pointer;
 }
+
+/* COMMON */
 
 .button_blue {
   position: relative;
   isolation: isolate;
   overflow: hidden;
 
-  min-height: 58px;
-  padding: 20px 28px;
+  min-height: 54px;
+  padding: 16px 26px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   border: 1px solid rgba(246, 246, 242, 0.28);
-  border-radius: 20px;
+  border-radius: 18px;
 
   background: var(--blue);
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 750;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
   white-space: nowrap;
-
-  cursor: pointer;
 
   transition:
     color 0.3s ease,
@@ -150,7 +154,6 @@ li,
 
 .button_blue::before {
   content: "";
-
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -183,25 +186,25 @@ li,
   z-index: 1000;
 
   width: 100%;
-  padding: 14px 48px;
+  padding: 12px 48px;
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .header-inner {
   width: 100%;
   max-width: var(--container);
-  min-height: 62px;
+  min-height: 58px;
   margin: 0 auto;
   padding: 8px 14px 8px 18px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
 
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 22px;
 
   background: rgba(246, 246, 242, 0.97);
   box-shadow: var(--shadow-header);
@@ -209,19 +212,17 @@ li,
 }
 
 .logo {
-  width: 148px;
-  max-width: 148px;
-  height: 46px;
+  width: 142px;
+  max-width: 142px;
+  height: 44px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--dark);
   text-decoration: none;
   flex-shrink: 0;
 
-  transform-origin: left center;
   transition: transform 0.3s ease;
 }
 
@@ -242,9 +243,9 @@ li,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  min-width: 0;
 }
 
 .nav a {
@@ -252,18 +253,19 @@ li,
   isolation: isolate;
   overflow: hidden;
 
-  padding: 14px 20px;
-  border-radius: 16px;
+  padding: 12px 16px;
+  border-radius: 14px;
 
   color: var(--text-main);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
+  white-space: nowrap;
 
   transition:
     color 0.3s ease,
@@ -299,18 +301,16 @@ li,
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
-
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
 }
 
 .phone {
   color: var(--dark);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 760;
   line-height: 1;
-  letter-spacing: 0.025em;
+  letter-spacing: 0;
   text-decoration: none;
   white-space: nowrap;
 
@@ -326,8 +326,8 @@ li,
   isolation: isolate;
   overflow: hidden;
 
-  min-height: 46px;
-  padding: 14px 22px;
+  min-height: 48px;
+  padding: 14px 24px;
 
   display: inline-flex;
   align-items: center;
@@ -339,12 +339,12 @@ li,
   background: var(--green);
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 760;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
   white-space: nowrap;
 
@@ -391,7 +391,6 @@ li,
 
   background: var(--dark);
 
-  cursor: pointer;
   flex-shrink: 0;
 }
 
@@ -431,8 +430,6 @@ li,
   background: var(--dark);
   color: var(--light);
   box-shadow: 0 18px 50px rgba(21, 25, 24, 0.18);
-
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
 }
 
 .mobile-menu.is-open {
@@ -442,8 +439,6 @@ li,
 .mobile-nav {
   display: flex;
   flex-direction: column;
-
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
 }
 
 .mobile-nav a {
@@ -457,12 +452,12 @@ li,
 
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
 }
 
@@ -476,8 +471,6 @@ li,
   display: flex;
   flex-direction: column;
   gap: 12px;
-
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
 }
 
 .mobile-actions a {
@@ -487,11 +480,10 @@ li,
 
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.025em;
   text-align: center;
   text-decoration: none;
 }
@@ -503,7 +495,6 @@ li,
 .mobile-actions a:last-child {
   background: var(--green);
   color: var(--light);
-  text-transform: uppercase;
 }
 
 /* VIDEO BANNER */
@@ -524,7 +515,7 @@ li,
   max-width: var(--container);
   min-height: 100%;
   margin: 0 auto;
-  padding: 58px;
+  padding: 52px;
 
   display: flex;
   align-items: center;
@@ -574,11 +565,11 @@ li,
   position: relative;
   z-index: 3;
 
-  max-width: 620px;
-  padding: 42px;
+  max-width: 560px;
+  padding: 36px;
 
   border: 1px solid rgba(246, 246, 242, 0.16);
-  border-radius: 30px;
+  border-radius: 28px;
 
   background: rgba(21, 25, 24, 0.34);
   backdrop-filter: blur(12px);
@@ -588,25 +579,27 @@ li,
   margin: 0;
 
   color: var(--light);
-  font-size: clamp(48px, 6vw, 96px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(42px, 4.4vw, 68px);
+  font-weight: 760;
+  line-height: 1.06;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .video-banner-subtitle {
   max-width: 520px;
-  margin: 28px 0 0;
+  margin: 22px 0 0;
 
-  color: rgba(246, 246, 242, 0.82);
+  color: rgba(246, 246, 242, 0.86);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: clamp(16px, 1.45vw, 24px);
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(15px, 1.25vw, 20px);
+  font-weight: 600;
   line-height: 1.35;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .video-banner-button {
@@ -614,9 +607,9 @@ li,
   isolation: isolate;
   overflow: hidden;
 
-  min-height: 58px;
-  margin-top: 36px;
-  padding: 16px 30px;
+  min-height: 54px;
+  margin-top: 30px;
+  padding: 16px 28px;
 
   display: inline-flex;
   align-items: center;
@@ -628,16 +621,14 @@ li,
   background: var(--green);
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 760;
   line-height: 1.2;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
   text-align: center;
-
-  cursor: pointer;
 
   transition:
     color 0.3s ease,
@@ -672,12 +663,12 @@ li,
 
 .video-banner-play {
   position: absolute;
-  right: 58px;
-  bottom: 58px;
+  right: 52px;
+  bottom: 52px;
   z-index: 3;
 
-  width: 86px;
-  height: 86px;
+  width: 76px;
+  height: 76px;
 
   display: grid;
   place-items: center;
@@ -687,7 +678,7 @@ li,
   background: rgba(246, 246, 242, 0.9);
   color: var(--green);
 
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1;
 
   box-shadow: 0 18px 50px rgba(21, 25, 24, 0.22);
@@ -696,7 +687,7 @@ li,
 /* SERVICES */
 
 .services-section {
-  min-height: calc(100svh - var(--header-height));
+  max-height: calc(100svh - var(--header-height));
   padding: 0 var(--section-padding-x) var(--section-gap);
   background: var(--light);
 
@@ -708,7 +699,7 @@ li,
 .services-top {
   width: 100%;
   max-width: 980px;
-  margin: 0 auto 18px;
+  margin: 0 auto 16px;
 
   display: flex;
   flex-direction: column;
@@ -716,14 +707,14 @@ li,
 }
 
 .services-top-title {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 
   color: #6b5cff;
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: clamp(22px, 1.8vw, 30px);
-  font-weight: 400;
-  line-height: 1.1;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(18px, 1.3vw, 23px);
+  font-weight: 700;
+  line-height: 1.15;
   text-align: center;
   text-transform: none;
 }
@@ -755,7 +746,7 @@ li,
 
 .services-search input {
   width: 100%;
-  height: 42px;
+  height: 40px;
   padding: 0 18px 0 42px;
 
   border: 1px solid rgba(107, 92, 255, 0.12);
@@ -764,8 +755,8 @@ li,
   background: #ffffff;
   color: var(--dark);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1;
 
@@ -792,7 +783,7 @@ li,
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 28px 36px 0;
+  padding: 26px 36px 0;
 
   overflow: hidden;
 
@@ -808,7 +799,7 @@ li,
   position: relative;
   z-index: 2;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   display: flex;
   align-items: center;
@@ -829,12 +820,11 @@ li,
   background: rgba(246, 246, 242, 0.6);
   color: rgba(21, 25, 24, 0.72);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -853,11 +843,13 @@ li,
   margin: 0;
 
   color: var(--dark);
-  font-size: clamp(36px, 4.2vw, 62px);
-  font-weight: 400;
-  line-height: 0.96;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(44px, 4.8vw, 70px);
+  font-weight: 760;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .services-grid {
@@ -872,7 +864,7 @@ li,
 .services-card {
   position: relative;
 
-  min-height: 268px;
+  min-height: 256px;
   padding: 20px;
 
   display: flex;
@@ -903,7 +895,7 @@ li,
   z-index: 2;
 
   width: 100%;
-  height: 50%;
+  height: 48%;
 
   background: linear-gradient(
     180deg,
@@ -957,16 +949,18 @@ li,
   position: relative;
   z-index: 4;
 
-  max-width: 230px;
+  max-width: 220px;
   margin: 0;
+  padding-right: 44px;
 
   color: var(--dark);
 
-  font-size: clamp(18px, 1.18vw, 23px);
-  font-weight: 400;
-  line-height: 1.04;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(19px, 1.35vw, 25px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .services-card p {
@@ -978,8 +972,8 @@ li,
 
   color: rgba(21, 25, 24, 0.66);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.38;
   text-transform: none;
@@ -998,15 +992,13 @@ li,
 
   color: var(--blue);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 760;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
-
-  cursor: pointer;
 
   transition:
     color 0.25s ease,
@@ -1020,15 +1012,15 @@ li,
 
 .services-card img {
   position: absolute;
-  right: -8px;
-  bottom: 4px;
+  right: -6px;
+  bottom: 8px;
   z-index: 1;
 
-  width: 54%;
-  max-width: 150px;
+  width: 50%;
+  max-width: 142px;
   height: auto;
 
-  opacity: 0.86;
+  opacity: 0.82;
   mix-blend-mode: multiply;
   filter: grayscale(1) brightness(1.08) contrast(1.04);
 
@@ -1041,25 +1033,9 @@ li,
 }
 
 .services-card:hover img {
-  opacity: 0.96;
+  opacity: 0.94;
   filter: grayscale(1) brightness(1.03) contrast(1.08);
   transform: translateY(-4px) scale(1.03);
-}
-
-.services-card:nth-child(1) img,
-.services-card:nth-child(2) img,
-.services-card:nth-child(3) img,
-.services-card:nth-child(4) img,
-.services-card:nth-child(5) img,
-.services-card:nth-child(7) img {
-  bottom: 8px;
-  max-width: 155px;
-}
-
-.services-card:nth-child(6) img,
-.services-card:nth-child(8) img {
-  bottom: 10px;
-  max-width: 148px;
 }
 
 .services-bottom {
@@ -1067,7 +1043,7 @@ li,
   z-index: 2;
 
   margin: 14px -36px 0;
-  padding: 18px 36px 22px;
+  padding: 22px 36px 24px;
 
   background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
   color: var(--light);
@@ -1076,16 +1052,17 @@ li,
 }
 
 .services-bottom p {
-  max-width: 980px;
+  max-width: 1120px;
   margin: 0 auto;
 
   color: var(--light);
 
-  font-size: clamp(23px, 2.2vw, 34px);
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(30px, 3.2vw, 48px);
+  font-weight: 700;
   line-height: 1.08;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
@@ -1095,11 +1072,11 @@ li,
   max-width: 920px;
   margin: 12px auto 0;
 
-  color: rgba(246, 246, 242, 0.9);
+  color: rgba(246, 246, 242, 0.92);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: clamp(15px, 1.25vw, 21px);
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(15px, 1.25vw, 20px);
+  font-weight: 500;
   line-height: 1.35;
   text-transform: none;
 }
@@ -1107,7 +1084,7 @@ li,
 /* PARTNERS */
 
 .partners-section {
-  min-height: calc(100svh - var(--header-height));
+  max-height: calc(100svh - var(--header-height));
   padding: 0 var(--section-padding-x) var(--section-gap);
   background: var(--light);
 
@@ -1141,8 +1118,8 @@ li,
   position: relative;
   z-index: 2;
 
-  min-height: 600px;
-  max-height: calc(100svh - var(--header-height) - 160px);
+  min-height: 560px;
+  max-height: calc(100svh - var(--header-height) - 170px);
 
   overflow: hidden;
 
@@ -1181,12 +1158,11 @@ li,
   background: rgba(246, 246, 242, 0.6);
   color: rgba(21, 25, 24, 0.72);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -1206,11 +1182,12 @@ li,
 
   color: var(--dark);
 
-  font-size: clamp(34px, 3.5vw, 56px);
-  font-weight: 400;
-  line-height: 0.98;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .partners-list {
@@ -1221,13 +1198,13 @@ li,
 .partners-card {
   position: relative;
 
-  min-height: 106px;
+  min-height: 104px;
   padding: 18px 72px 18px 22px;
 
   overflow: hidden;
 
   border: 1px solid rgba(21, 25, 24, 0.08);
-  border-radius: 0 0 28px 28px;
+  border-radius: 0 0 26px 26px;
 
   background: rgba(255, 255, 255, 0.78);
   color: var(--dark);
@@ -1309,11 +1286,12 @@ li,
 
   color: var(--dark);
 
-  font-size: clamp(18px, 1.25vw, 24px);
-  font-weight: 400;
-  line-height: 1.06;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(17px, 1.25vw, 22px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .partners-card p {
@@ -1325,10 +1303,10 @@ li,
 
   color: rgba(21, 25, 24, 0.66);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.36;
+  line-height: 1.38;
   text-transform: none;
 }
 
@@ -1339,7 +1317,7 @@ li,
   grid-column: 1 / -1;
 
   margin: 0 -36px;
-  padding: 20px 36px 24px;
+  padding: 22px 36px 26px;
 
   background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
   color: var(--light);
@@ -1353,11 +1331,12 @@ li,
 
   color: var(--light);
 
-  font-size: clamp(23px, 2.2vw, 34px);
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(28px, 2.8vw, 44px);
+  font-weight: 700;
   line-height: 1.08;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
@@ -1367,11 +1346,11 @@ li,
   max-width: 980px;
   margin: 12px auto 0;
 
-  color: rgba(246, 246, 242, 0.9);
+  color: rgba(246, 246, 242, 0.92);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: clamp(14px, 1.12vw, 19px);
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(14px, 1.12vw, 18px);
+  font-weight: 500;
   line-height: 1.35;
   text-transform: none;
 }
@@ -1379,7 +1358,7 @@ li,
 /* CONSULTATION BLOCK */
 
 .consultation-section {
-  min-height: calc(100svh - var(--header-height));
+  max-height: calc(100svh - var(--header-height));
   padding: 0 var(--section-padding-x) var(--section-gap);
   background: var(--light);
 
@@ -1396,13 +1375,13 @@ li,
 .consultation-banner {
   position: relative;
 
-  min-height: 420px;
-  padding: 70px 56px;
+  min-height: 390px;
+  padding: 48px 54px;
 
   display: flex;
   align-items: center;
 
-  overflow: visible;
+  overflow: hidden;
 
   border-radius: 34px;
   background: linear-gradient(135deg, #173f97 0%, #0f46c8 55%, #2b6df0 100%);
@@ -1410,49 +1389,49 @@ li,
 }
 
 .consultation-copy {
-  max-width: 470px;
+  max-width: 430px;
   color: var(--light);
 }
 
 .consultation-copy h2 {
-  margin: 0 0 26px;
+  margin: 0 0 22px;
 
   color: var(--light);
 
-  font-family: "Adderley", Arial, Helvetica, sans-serif;
-  font-size: clamp(34px, 3.3vw, 64px);
-  font-weight: 400;
-  line-height: 0.96;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .consultation-copy p {
-  max-width: 420px;
+  max-width: 410px;
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: clamp(14px, 1vw, 18px);
-  font-weight: 400;
-  line-height: 1.5;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(14px, 1vw, 17px);
+  font-weight: 500;
+  line-height: 1.45;
   text-transform: none;
 }
 
 .consultation-card {
   position: absolute;
   top: 50%;
-  right: 56px;
+  right: 54px;
   transform: translateY(-50%);
 
-  width: min(100%, 690px);
-  min-height: 370px;
-  padding: 34px;
+  width: min(100%, 650px);
+  min-height: 320px;
+  padding: 26px;
 
   display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: 26px;
+  grid-template-columns: 1fr 200px;
+  gap: 22px;
 
   border: 1px solid rgba(21, 25, 24, 0.08);
   border-radius: 28px;
@@ -1471,14 +1450,14 @@ li,
 
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 13px;
 }
 
 .consultation-form-fields input[type="text"],
 .consultation-form-fields input[type="tel"] {
   width: 100%;
-  height: 56px;
-  padding: 0 24px;
+  height: 50px;
+  padding: 0 22px;
 
   border: 0;
   border-radius: 999px;
@@ -1487,7 +1466,7 @@ li,
   background: #f7f7f7;
   color: var(--dark);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1;
@@ -1511,32 +1490,30 @@ li,
 .consultation-checkbox {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
 
   color: rgba(21, 25, 24, 0.72);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.4;
   text-transform: none;
-
-  cursor: pointer;
 }
 
 .consultation-checkbox input {
-  width: 18px;
-  height: 18px;
-  margin-top: 2px;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
 
-  flex: 0 0 18px;
+  flex: 0 0 17px;
   accent-color: #19985a;
 }
 
 .consultation-submit {
-  min-height: 58px;
-  margin-top: 6px;
-  padding: 16px 26px;
+  min-height: 54px;
+  margin-top: 4px;
+  padding: 15px 24px;
 
   border: 0;
   border-radius: 999px;
@@ -1544,14 +1521,12 @@ li,
   background: #19985a;
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 760;
   line-height: 1;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-
-  cursor: pointer;
+  letter-spacing: 0;
+  text-transform: none;
 
   transition:
     transform 0.25s ease,
@@ -1576,7 +1551,7 @@ li,
 
 .consultation-manager-photo {
   width: 100%;
-  height: 240px;
+  height: 198px;
 
   background: #9b9b9b;
 }
@@ -1591,7 +1566,7 @@ li,
 }
 
 .consultation-manager-info {
-  padding: 18px 18px 20px;
+  padding: 16px 16px 18px;
 
   background: rgba(21, 25, 24, 0.55);
 }
@@ -1602,9 +1577,9 @@ li,
 
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 760;
   line-height: 1.1;
 }
 
@@ -1613,8 +1588,8 @@ li,
 
   color: rgba(255, 255, 255, 0.82);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.35;
 }
@@ -1622,7 +1597,7 @@ li,
 /* REVIEWS */
 
 .reviews-section {
-  min-height: calc(100svh - var(--header-height));
+  max-height: calc(100svh - var(--header-height));
   padding: 0 var(--section-padding-x) var(--section-gap);
   background: var(--light);
 
@@ -1636,7 +1611,7 @@ li,
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 36px;
+  padding: 34px 36px;
 
   overflow: hidden;
 
@@ -1674,12 +1649,11 @@ li,
   background: rgba(246, 246, 242, 0.7);
   color: rgba(21, 25, 24, 0.72);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -1699,11 +1673,12 @@ li,
 
   color: var(--dark);
 
-  font-size: clamp(42px, 4.6vw, 74px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(48px, 5.3vw, 84px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .reviews-controls {
@@ -1729,8 +1704,6 @@ li,
   font-size: 34px;
   font-weight: 400;
   line-height: 1;
-
-  cursor: pointer;
 
   transition:
     background 0.25s ease,
@@ -1786,8 +1759,8 @@ li,
 }
 
 .review-video-info {
-  min-height: 82px;
-  margin-bottom: 16px;
+  min-height: 76px;
+  margin-bottom: 14px;
 }
 
 .review-video-info h3 {
@@ -1795,11 +1768,12 @@ li,
 
   color: var(--dark);
 
-  font-size: clamp(22px, 1.55vw, 30px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(22px, 1.6vw, 30px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .review-video-info p {
@@ -1807,12 +1781,11 @@ li,
 
   color: rgba(21, 25, 24, 0.66);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   line-height: 1.25;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .review-video {
@@ -1878,8 +1851,6 @@ li,
   font-size: 24px;
   line-height: 1;
 
-  cursor: pointer;
-
   transform: translate(-50%, -50%);
   box-shadow: 0 14px 34px rgba(21, 25, 24, 0.18);
 
@@ -1906,7 +1877,7 @@ li,
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 42px 48px;
+  padding: 38px 48px;
 
   display: grid;
   grid-template-columns: minmax(260px, 1.1fr) 0.8fr 1fr 1fr;
@@ -1952,8 +1923,8 @@ li,
 
   color: rgba(21, 25, 24, 0.66);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
   line-height: 1.45;
   text-transform: none;
 }
@@ -1963,10 +1934,12 @@ li,
 
   color: var(--dark);
 
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(24px, 2vw, 34px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .footer-nav {
@@ -1981,8 +1954,8 @@ li,
 
   color: rgba(21, 25, 24, 0.68);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.45;
   text-decoration: none;
@@ -2025,8 +1998,9 @@ li,
   background: var(--green);
   color: var(--light);
 
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -2043,7 +2017,7 @@ li,
 
   color: rgba(21, 25, 24, 0.48);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 1.4;
   text-transform: none;
@@ -2141,8 +2115,6 @@ li,
   font-size: 30px;
   line-height: 1;
 
-  cursor: pointer;
-
   transition:
     transform 0.25s ease,
     background 0.25s ease;
@@ -2175,11 +2147,11 @@ li,
   background: var(--green);
   color: var(--light);
 
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .consultation-modal-text h2 {
@@ -2188,11 +2160,12 @@ li,
 
   color: var(--dark);
 
-  font-size: clamp(30px, 3.4vw, 48px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(30px, 3.2vw, 48px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .consultation-modal-text p:not(.consultation-modal-label) {
@@ -2201,7 +2174,7 @@ li,
 
   color: rgba(21, 25, 24, 0.68);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
@@ -2246,11 +2219,11 @@ li,
 
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .consultation-modal-manager-info span {
@@ -2259,7 +2232,7 @@ li,
 
   color: rgba(246, 246, 242, 0.72);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 11px;
   font-weight: 400;
   line-height: 1.35;
@@ -2288,12 +2261,11 @@ li,
 
   color: rgba(21, 25, 24, 0.66);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .consultation-modal-form input[type="text"],
@@ -2308,7 +2280,7 @@ li,
   background: var(--white);
   color: var(--dark);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 400;
 
@@ -2354,7 +2326,7 @@ li,
 
   color: rgba(21, 25, 24, 0.62);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 400;
   line-height: 1.45;
@@ -2451,8 +2423,6 @@ li,
   font-size: 30px;
   line-height: 1;
 
-  cursor: pointer;
-
   transition:
     transform 0.25s ease,
     background 0.25s ease;
@@ -2488,12 +2458,11 @@ li,
   background: var(--green);
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .service-modal-content h2 {
@@ -2501,11 +2470,12 @@ li,
 
   color: var(--dark);
 
-  font-size: clamp(38px, 4.6vw, 64px);
-  font-weight: 500;
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .service-modal-intro {
@@ -2513,7 +2483,7 @@ li,
 
   color: var(--dark);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.4;
@@ -2523,7 +2493,7 @@ li,
 .service-modal-text {
   color: rgba(21, 25, 24, 0.78);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
@@ -2555,7 +2525,7 @@ li,
 
   color: rgba(21, 25, 24, 0.76);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.45;
 }
@@ -2588,7 +2558,7 @@ li,
 .service-modal-order {
   width: 100%;
   max-width: 280px;
-  min-height: 58px;
+  min-height: 56px;
   margin: 30px 0 0 auto;
   padding: 16px 28px;
 
@@ -2602,14 +2572,12 @@ li,
   background: var(--green);
   color: var(--light);
 
-  font-family: "Neutral Face", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 760;
   line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
-
-  cursor: pointer;
+  letter-spacing: 0;
+  text-transform: none;
 
   transition:
     background 0.25s ease,
@@ -2627,23 +2595,42 @@ li,
 
 @media (max-width: 1280px) {
   :root {
-    --section-gap: 32px;
+    --section-gap: 30px;
   }
 
-  .consultation-banner {
-    min-height: 460px;
-    padding: 56px 40px;
+  .site-header {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .nav {
+    gap: 6px;
+  }
+
+  .nav a {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 15px;
+  }
+
+  .phone {
+    font-size: 17px;
+  }
+
+  .contact-link {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
   }
 
   .consultation-card {
-    right: 36px;
-    width: min(100%, 620px);
-    grid-template-columns: 1fr 200px;
-    padding: 28px;
+    right: 34px;
+    width: min(100%, 600px);
+    grid-template-columns: 1fr 190px;
   }
 
   .consultation-copy {
-    max-width: 390px;
+    max-width: 360px;
   }
 }
 
@@ -2651,16 +2638,32 @@ li,
   .review-video-card {
     min-width: calc((100% - 36px) / 3);
   }
+
+  .header-inner {
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  .phone {
+    font-size: 16px;
+  }
+
+  .contact-link {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 1100px) {
   :root {
     --section-padding-x: 24px;
-    --header-height: 88px;
+    --header-height: 84px;
   }
 
   .site-header {
-    padding: 14px 24px;
+    padding: 12px 24px;
   }
 
   .nav,
@@ -2682,28 +2685,28 @@ li,
   }
 
   .video-banner {
-    min-height: 620px;
-    padding: 42px 36px;
+    min-height: 560px;
+    padding: 40px 34px;
   }
 
   .video-banner-content {
-    max-width: 560px;
-    padding: 34px;
+    max-width: 520px;
+    padding: 32px;
   }
 
   .video-banner-play {
-    right: 36px;
-    bottom: 36px;
+    right: 34px;
+    bottom: 34px;
   }
 
   .services-inner {
-    padding: 36px 28px 0;
+    padding: 34px 28px 0;
   }
 
   .services-head {
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 16px;
   }
 
   .services-grid {
@@ -2711,12 +2714,12 @@ li,
   }
 
   .services-card {
-    min-height: 330px;
+    min-height: 315px;
   }
 
   .services-card img {
-    width: 58%;
-    max-width: 190px;
+    width: 54%;
+    max-width: 180px;
   }
 
   .services-bottom {
@@ -2725,13 +2728,13 @@ li,
   }
 
   .partners-inner {
-    padding: 36px 28px 0;
+    padding: 34px 28px 0;
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 26px;
   }
 
   .partners-media {
-    min-height: 420px;
+    min-height: 390px;
     max-height: none;
     border-radius: 26px;
   }
@@ -2743,7 +2746,7 @@ li,
 
   .consultation-banner {
     min-height: auto;
-    padding: 42px 28px 32px;
+    padding: 40px 28px 32px;
     gap: 24px;
     flex-direction: column;
     align-items: stretch;
@@ -2765,7 +2768,7 @@ li,
 
     width: 100%;
     min-height: auto;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 1fr 210px;
   }
 
   .reviews-head {
@@ -2788,13 +2791,13 @@ li,
 
   .footer-inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 42px 36px;
+    padding: 40px 36px;
   }
 }
 
 @media (max-width: 768px) {
   .consultation-section {
-    padding-bottom: 60px;
+    padding-bottom: 56px;
   }
 
   .consultation-banner {
@@ -2810,8 +2813,8 @@ li,
   }
 
   .consultation-copy h2 {
-    font-size: clamp(28px, 9vw, 42px);
-    line-height: 1;
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.08;
   }
 
   .consultation-copy p {
@@ -2857,23 +2860,23 @@ li,
 @media (max-width: 640px) {
   :root {
     --section-padding-x: 12px;
-    --section-gap: 28px;
-    --header-height: 82px;
+    --section-gap: 26px;
+    --header-height: 78px;
   }
 
   .site-header {
-    padding: 12px;
+    padding: 10px 12px;
   }
 
   .header-inner {
-    min-height: 58px;
+    min-height: 56px;
     padding: 8px 10px;
     border-radius: 20px;
   }
 
   .logo {
-    width: 124px;
-    max-width: 124px;
+    width: 122px;
+    max-width: 122px;
     height: 40px;
   }
 
@@ -2889,7 +2892,7 @@ li,
   }
 
   .mobile-nav a {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .mobile-actions a {
@@ -2897,8 +2900,8 @@ li,
   }
 
   .video-banner {
-    min-height: 640px;
-    padding: 28px 22px;
+    min-height: 560px;
+    padding: 24px 20px;
     align-items: flex-end;
     border-radius: 26px;
   }
@@ -2915,27 +2918,27 @@ li,
   .video-banner-content {
     width: 100%;
     max-width: none;
-    padding: 26px 22px;
+    padding: 24px 20px;
     border-radius: 24px;
   }
 
   .video-banner-content h2 {
-    font-size: clamp(38px, 11vw, 54px);
-    line-height: 0.98;
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1.08;
   }
 
   .video-banner-subtitle {
-    margin-top: 20px;
+    margin-top: 18px;
     font-size: 14px;
     line-height: 1.35;
   }
 
   .video-banner-button {
     width: 100%;
-    min-height: 56px;
-    margin-top: 28px;
+    min-height: 54px;
+    margin-top: 24px;
     padding: 16px 20px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .video-banner-play {
@@ -2943,19 +2946,19 @@ li,
     top: 22px;
     bottom: auto;
 
-    width: 62px;
-    height: 62px;
+    width: 58px;
+    height: 58px;
 
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .services-top {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .services-top-title {
-    margin-bottom: 12px;
-    font-size: 22px;
+    margin-bottom: 10px;
+    font-size: 18px;
     line-height: 1.15;
   }
 
@@ -2966,27 +2969,27 @@ li,
   .services-search input {
     height: 44px;
     padding-left: 40px;
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .services-inner {
-    padding: 30px 18px 0;
+    padding: 28px 18px 0;
     border-radius: 26px;
   }
 
   .services-head {
-    margin-bottom: 22px;
-    gap: 16px;
+    margin-bottom: 20px;
+    gap: 14px;
   }
 
   .services-label {
     padding: 9px 16px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .services-head h2 {
-    font-size: clamp(34px, 10vw, 48px);
-    line-height: 1;
+    font-size: clamp(38px, 11vw, 52px);
+    line-height: 1.08;
   }
 
   .services-grid {
@@ -2994,7 +2997,7 @@ li,
   }
 
   .services-card {
-    min-height: 320px;
+    min-height: 300px;
     padding: 22px;
     border-radius: 18px;
   }
@@ -3004,8 +3007,9 @@ li,
   }
 
   .services-card h3 {
-    max-width: 240px;
-    font-size: 24px;
+    max-width: 250px;
+    font-size: 25px;
+    line-height: 1.12;
   }
 
   .services-card p {
@@ -3014,18 +3018,14 @@ li,
   }
 
   .services-card-more {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .services-card img {
-    width: 58%;
-    max-width: 170px;
-    bottom: 6px;
-    opacity: 0.86;
-  }
-
-  .services-card:hover img {
-    opacity: 0.96;
+    width: 56%;
+    max-width: 160px;
+    bottom: 8px;
+    opacity: 0.84;
   }
 
   .services-bottom {
@@ -3035,7 +3035,8 @@ li,
 
   .services-bottom p,
   .partners-bottom p {
-    font-size: clamp(22px, 7vw, 30px);
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.08;
   }
 
   .services-bottom span,
@@ -3045,30 +3046,30 @@ li,
   }
 
   .partners-inner {
-    padding: 30px 18px 0;
+    padding: 28px 18px 0;
     border-radius: 26px;
     gap: 24px;
   }
 
   .partners-media {
-    min-height: 340px;
+    min-height: 320px;
     border-radius: 22px;
   }
 
   .partners-label {
     padding: 9px 16px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .partners-content h2 {
-    margin-bottom: 22px;
-    font-size: clamp(34px, 10vw, 48px);
-    line-height: 1;
+    margin-bottom: 20px;
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 1.08;
   }
 
   .partners-card {
     min-height: auto;
-    padding: 22px 64px 22px 20px;
+    padding: 20px 62px 20px 18px;
     border-radius: 22px;
   }
 
@@ -3078,7 +3079,7 @@ li,
   }
 
   .partners-card h3 {
-    font-size: 24px;
+    font-size: 21px;
   }
 
   .partners-card p {
@@ -3092,7 +3093,7 @@ li,
   }
 
   .reviews-inner {
-    padding: 30px 18px;
+    padding: 28px 18px;
     border-radius: 26px;
   }
 
@@ -3102,8 +3103,8 @@ li,
   }
 
   .reviews-head h2 {
-    font-size: clamp(38px, 12vw, 56px);
-    line-height: 1;
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 1.08;
   }
 
   .reviews-controls {
@@ -3132,11 +3133,11 @@ li,
   }
 
   .review-video-info h3 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .review-video-info p {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .review-video {
@@ -3155,12 +3156,12 @@ li,
 
   .footer-inner {
     grid-template-columns: 1fr;
-    padding: 36px 22px 28px;
+    padding: 34px 22px 28px;
     border-radius: 26px;
   }
 
   .footer-column h3 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .button_blue {
@@ -3170,7 +3171,7 @@ li,
 
     border-radius: 18px;
 
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .consultation-modal {
@@ -3199,12 +3200,13 @@ li,
 
   .consultation-modal-label {
     padding: 12px 20px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .consultation-modal-text h2 {
     padding-right: 44px;
-    font-size: clamp(30px, 9vw, 40px);
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.08;
   }
 
   .consultation-modal-text p:not(.consultation-modal-label) {
@@ -3226,7 +3228,7 @@ li,
 
   .consultation-modal-submit {
     min-height: 56px;
-    font-size: 12px;
+    font-size: 13px;
     white-space: normal;
   }
 
@@ -3260,8 +3262,8 @@ li,
 
   .service-modal-content h2 {
     padding-right: 44px;
-    font-size: clamp(36px, 11vw, 52px);
-    line-height: 1;
+    font-size: clamp(32px, 9vw, 46px);
+    line-height: 1.08;
   }
 
   .service-modal-text,
