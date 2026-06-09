@@ -51,7 +51,7 @@
   --border-light: rgba(246, 246, 242, 0.14);
   --shadow-header: 0 14px 38px rgba(21, 25, 24, 0.08);
   --container: 1280px;
-  --header-height: 32px;
+  --header-height: 25px;
   --section-gap: 32px;
   --section-padding-x: 48px;
 }
@@ -1108,7 +1108,7 @@ button {
 .partners-content {
   position: relative;
   z-index: 2;
-  padding: 22px;
+  padding: 20px;
 }
 
 .partners-label {
@@ -1276,7 +1276,7 @@ button {
   grid-column: 1 / -1;
 
   margin: 0 -32px;
-  padding: 16px 32px 18px;
+  padding: 10px 32px 15px;
 
   background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
   color: var(--light);
@@ -1291,7 +1291,7 @@ button {
   color: var(--light);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(24px, 2.35vw, 36px);
+  font-size: clamp(20px, 2vw, 28px);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: 0;
@@ -1308,7 +1308,7 @@ button {
   color: rgba(246, 246, 242, 0.92);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(13px, 0.95vw, 16px);
+  font-size: clamp(12px, 0.95vw, 16px);
   font-weight: 500;
   line-height: 1.32;
   text-transform: none;
@@ -2815,10 +2815,6 @@ button {
     bottom: 34px;
   }
 
-  .services-inner {
-    padding: 34px 28px 0;
-  }
-
   .services-head {
     flex-direction: column;
     align-items: flex-start;
@@ -3100,7 +3096,6 @@ button {
   }
 
   .services-inner {
-    padding: 28px 18px 0;
     border-radius: 26px;
   }
 
