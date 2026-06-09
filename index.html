@@ -34,6 +34,13 @@
           </a>
         </div>
 
+        <a
+          class="mobile-header-consultation js-open-consultation"
+          href="#consultation-modal"
+        >
+          Получить консультацию
+        </a>
+
         <button
           class="burger"
           type="button"
@@ -41,8 +48,7 @@
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
-          <span></span>
-          <span></span>
+          X
         </button>
       </div>
 
@@ -116,43 +122,39 @@
         id="services"
         aria-labelledby="services-title"
       >
-        <div class="services-top">
-          <h3 class="services-top-title">Что вы создадите сегодня?</h3>
-
-          <div class="services-search">
-            <span class="services-search-icon" aria-hidden="true">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="11"
-                  cy="11"
-                  r="6.5"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-                <path
-                  d="M16 16L21 21"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </span>
-
-            <input
-              type="text"
-              placeholder="Напишите название или вставьте ссылку на нужный товар"
-              aria-label="Напишите название или вставьте ссылку на нужный товар"
-            />
-          </div>
-        </div>
-
         <div class="services-inner">
+          <div class="services-top">
+            <div class="services-search">
+              <input
+                type="text"
+                placeholder="Напишите название или вставьте ссылку на нужный товар"
+                aria-label="Напишите название или вставьте ссылку на нужный товар"
+              />
+              <span class="services-search-icon" aria-hidden="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="6.5"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                  <path
+                    d="M16 16L21 21"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
           <div class="services-head">
             <p class="services-label">Гарантия на каждом этапе</p>
 
@@ -170,15 +172,16 @@
                 бизнеса — от оборудования и комплектующих до готовой продукции.
               </p>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="search"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-search.png" alt="" />
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="search"
+                >
+                  Подробнее
+                </button>
+                <img src="./Images/service-search.png" alt="" />
+              </div>
             </article>
 
             <article class="services-card">
@@ -190,16 +193,17 @@
                 Представляем ваши интересы при работе с иностранными
                 поставщиками и производителями.
               </p>
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="middleman"
+                >
+                  Подробнее
+                </button>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="middleman"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-partner.png" alt="" />
+                <img src="./Images/service-partner.png" alt="" />
+              </div>
             </article>
 
             <article class="services-card">
@@ -211,16 +215,17 @@
                 Организуем экспорт продукции из РБ и РФ с учетом действующих
                 ограничений и требований международной логистики.
               </p>
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="export"
+                >
+                  Подробнее
+                </button>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="export"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-export.png" alt="" />
+                <img src="./Images/service-export.png" alt="" />
+              </div>
             </article>
 
             <article class="services-card">
@@ -232,16 +237,17 @@
                 Осуществляем импорт товаров «под ключ» — от поиска и выкупа до
                 доставки и оформления документов.
               </p>
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="import"
+                >
+                  Подробнее
+                </button>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="import"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-import.png" alt="" />
+                <img src="./Images/service-import.png" alt="" />
+              </div>
             </article>
 
             <article class="services-card">
@@ -253,16 +259,17 @@
                 Выстраиваем транзитные маршруты поставок через третьи страны для
                 бесперебойной работы вашего бизнеса.
               </p>
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="transit"
+                >
+                  Подробнее
+                </button>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="transit"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-transit.png" alt="" />
+                <img src="./Images/service-transit.png" alt="" />
+              </div>
             </article>
 
             <article class="services-card">
@@ -274,16 +281,17 @@
                 Обеспечиваем полное таможенное сопровождение грузов и подготовку
                 всей необходимой документации.
               </p>
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="customs"
+                >
+                  Подробнее
+                </button>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="customs"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-customs.png" alt="" />
+                <img src="./Images/service-customs.png" alt="" />
+              </div>
             </article>
 
             <article class="services-card">
@@ -295,16 +303,17 @@
                 Принимаем, консолидируем и храним грузы на территории Европы с
                 последующей отправкой.
               </p>
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="warehouse"
+                >
+                  Подробнее
+                </button>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="warehouse"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-warehouse.png" alt="" />
+                <img src="./Images/service-warehouse.png" alt="" />
+              </div>
             </article>
 
             <article class="services-card">
@@ -316,16 +325,17 @@
                 Организуем проведение международных платежей для внешнеторговых
                 сделок в условиях ограничений.
               </p>
+              <div class="services-card-block">
+                <button
+                  class="services-card-more"
+                  type="button"
+                  data-service-modal="payments"
+                >
+                  Подробнее
+                </button>
 
-              <button
-                class="services-card-more"
-                type="button"
-                data-service-modal="payments"
-              >
-                Подробнее
-              </button>
-
-              <img src="./Images/service-payment.png" alt="" />
+                <img src="./Images/service-payment.png" alt="" />
+              </div>
             </article>
           </div>
 
@@ -358,10 +368,7 @@
           <div class="partners-content">
             <p class="partners-label">Партнерам</p>
 
-            <h2 id="partners-title">
-              Почему выбирают<br />
-              «Компас Групп»
-            </h2>
+            <h2 id="partners-title">Почему выбирают «Компас Групп»</h2>
 
             <div class="partners-list">
               <article class="partners-card">
@@ -439,67 +446,6 @@
               с компаниями разного масштаба — от начинающих предпринимателей до
               крупных производственных предприятий.
             </span>
-          </div>
-        </div>
-      </section>
-
-      <section class="consultation-section" id="consultation">
-        <div class="consultation-inner">
-          <div class="consultation-banner">
-            <div class="consultation-copy">
-              <h2>Получи бесплатную консультацию от наших экспертов</h2>
-
-              <p>
-                Оставьте заявку — и мы предложим конкретное решение под вашу
-                задачу. ООО «Компас групп» ваш надежный партнер в международной
-                торговле!
-              </p>
-            </div>
-
-            <div class="consultation-card">
-              <form class="consultation-form" action="#" method="post">
-                <div class="consultation-form-fields">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Имя"
-                    autocomplete="name"
-                    required
-                  />
-
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Телефон"
-                    autocomplete="tel"
-                    required
-                  />
-
-                  <label class="consultation-checkbox">
-                    <input type="checkbox" name="agreement" required />
-                    <span>Я соглашаюсь на обработку персональных данных</span>
-                  </label>
-
-                  <button type="submit" class="consultation-submit">
-                    Получить консультацию
-                  </button>
-                </div>
-              </form>
-
-              <div class="consultation-manager">
-                <div class="consultation-manager-photo">
-                  <img
-                    src="./Images/manager-photo.jpg"
-                    alt="Менеджер Компас Групп"
-                  />
-                </div>
-
-                <div class="consultation-manager-info">
-                  <strong>Ваш менеджер</strong>
-                  <span>Специалист Компас Групп</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -665,6 +611,67 @@
           </div>
         </div>
       </section>
+
+      <section class="consultation-section" id="consultation">
+        <div class="consultation-inner">
+          <div class="consultation-banner">
+            <div class="consultation-copy">
+              <h2>Получи бесплатную консультацию от наших экспертов</h2>
+
+              <p>
+                Оставьте заявку — и мы предложим конкретное решение под вашу
+                задачу. ООО «Компас групп» ваш надежный партнер в международной
+                торговле!
+              </p>
+            </div>
+
+            <div class="consultation-card">
+              <form class="consultation-form" action="#" method="post">
+                <div class="consultation-form-fields">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Имя"
+                    autocomplete="name"
+                    required
+                  />
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Телефон"
+                    autocomplete="tel"
+                    required
+                  />
+
+                  <label class="consultation-checkbox">
+                    <input type="checkbox" name="agreement" required />
+                    <span>Я соглашаюсь на обработку персональных данных</span>
+                  </label>
+
+                  <button type="submit" class="consultation-submit">
+                    Получить консультацию
+                  </button>
+                </div>
+              </form>
+
+              <div class="consultation-manager">
+                <div class="consultation-manager-photo">
+                  <img
+                    src="./Images/manager-photo.jpg"
+                    alt="Менеджер Компас Групп"
+                  />
+                </div>
+
+                <div class="consultation-manager-info">
+                  <strong>Ваш менеджер</strong>
+                  <span>Специалист Компас Групп</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer" id="contacts">
@@ -714,8 +721,8 @@
           <p>г. Гродно, ул. Буденного 41, каб. 2.04</p>
 
           <div class="footer-socials" aria-label="Социальные сети">
-            <a href="#" aria-label="WhatsApp">WA</a>
-            <a href="#" aria-label="Telegram">TG</a>
+            <a class="messenger-button" href="#" aria-label="WhatsApp">WA</a>
+            <a class="messenger-button" href="#" aria-label="Telegram">TG</a>
           </div>
         </div>
       </div>
@@ -756,17 +763,6 @@
               задачу. ООО «Компас Групп» — ваш надежный партнер в международной
               торговле!
             </p>
-          </div>
-
-          <div class="consultation-modal-manager">
-            <div class="consultation-modal-photo">
-              <img src="./Images/manager.jpg" alt="Персональный менеджер" />
-            </div>
-
-            <div class="consultation-modal-manager-info">
-              <strong>Персональный менеджер</strong>
-              <span>Свяжется с вами и подберёт решение</span>
-            </div>
           </div>
         </div>
 

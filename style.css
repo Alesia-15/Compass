@@ -45,15 +45,11 @@
   --light: #f6f6f2;
   --white: #ffffff;
   --blue: #0e44f3;
-
   --text-main: rgba(21, 25, 24, 0.94);
   --text-soft: rgba(21, 25, 24, 0.68);
-
   --border: rgba(21, 25, 24, 0.12);
   --border-light: rgba(246, 246, 242, 0.14);
-
   --shadow-header: 0 14px 38px rgba(21, 25, 24, 0.08);
-
   --container: 1280px;
   --header-height: 32px;
   --section-gap: 32px;
@@ -100,7 +96,7 @@ footer,
 }
 
 main {
-  padding-top: var(--header-height);
+  padding-top: 65px;
 }
 
 h1,
@@ -391,7 +387,7 @@ button {
   border-radius: 15px;
 
   background: var(--dark);
-
+  color: #ffffff;
   flex-shrink: 0;
 }
 
@@ -498,13 +494,16 @@ button {
   color: var(--light);
 }
 
+.mobile-header-consultation {
+  display: none;
+}
+
 /* VIDEO BANNER */
 
 .video-banner-section {
   min-height: calc(100svh - var(--header-height) - var(--section-gap));
-  padding: 0 var(--section-padding-x) var(--section-gap);
+  padding: 25px var(--section-padding-x);
   background: var(--light);
-
   display: flex;
   align-items: stretch;
 }
@@ -690,9 +689,8 @@ button {
 .services-section {
   height: calc(100svh - var(--header-height));
   max-height: calc(100svh - var(--header-height));
-  padding: 0 var(--section-padding-x) 20px;
+  padding: 25px var(--section-padding-x);
   background: var(--light);
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -700,14 +698,18 @@ button {
 }
 
 .services-top {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto 12px;
+  width: calc(100% + 64px);
+  margin: -18px -32px 14px;
+  padding: 18px 32px 20px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
   flex: 0 0 auto;
+
+  background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
 }
 
 .services-top-title {
@@ -725,51 +727,42 @@ button {
 
 .services-search {
   position: relative;
-
   width: 100%;
   max-width: 680px;
 }
 
 .services-search-icon {
   position: absolute;
-  left: 16px;
+  right: 16px;
   top: 50%;
-
   width: 16px;
   height: 16px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   color: rgba(21, 25, 24, 0.36);
-
   transform: translateY(-50%);
   pointer-events: none;
 }
 
 .services-search input {
   width: 100%;
-  height: 36px;
-  padding: 0 18px 0 42px;
+  height: 42px;
+  padding: 0 46px 0 22px;
 
-  border: 1px solid rgba(107, 92, 255, 0.12);
-  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
 
   background: #ffffff;
   color: var(--dark);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1;
 
   outline: none;
-  box-shadow: 0 6px 16px rgba(107, 92, 255, 0.08);
-
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+  box-shadow: 0 10px 24px rgba(21, 25, 24, 0.12);
 }
 
 .services-search input::placeholder {
@@ -874,22 +867,16 @@ button {
 
 .services-card {
   position: relative;
-
   min-height: 0;
   padding: 18px;
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
+  justify-content: space-between;
   overflow: hidden;
-
   border: 1px solid rgba(21, 25, 24, 0.08);
   border-radius: 18px;
-
   background: #ffffff;
   color: var(--dark);
-
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
@@ -899,22 +886,18 @@ button {
 
 .services-card::before {
   content: "";
-
   position: absolute;
   left: 0;
   top: 0;
   z-index: 2;
-
   width: 100%;
   height: 48%;
-
   background: linear-gradient(
     180deg,
     #ffffff 0%,
     rgba(255, 255, 255, 0.98) 74%,
     rgba(255, 255, 255, 0) 100%
   );
-
   pointer-events: none;
 }
 
@@ -927,25 +910,20 @@ button {
 
 .services-card-icon {
   position: absolute;
-  top: 18px;
+  top: 10px;
   right: 18px;
   z-index: 5;
-
   width: 34px;
   height: 34px;
-
   display: grid;
   place-items: center;
-
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--green);
   color: var(--light);
-
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
-
   transition:
     transform 0.25s ease,
     background 0.25s ease;
@@ -953,19 +931,16 @@ button {
 
 .services-card:hover .services-card-icon {
   transform: translateX(4px);
-  background: var(--dark);
+  background: var(--blue);
 }
 
 .services-card h3 {
   position: relative;
   z-index: 4;
-
   max-width: 220px;
   margin: 0;
   padding-right: 44px;
-
   color: var(--dark);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(17px, 1.18vw, 22px);
   font-weight: 700;
@@ -977,12 +952,9 @@ button {
 .services-card p {
   position: relative;
   z-index: 4;
-
   max-width: 250px;
   margin: 10px 0 0;
-
   color: rgba(21, 25, 24, 0.66);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(11px, 0.86vw, 12.5px);
   font-weight: 400;
@@ -990,53 +962,41 @@ button {
   text-transform: none;
 }
 
+.services-card-block {
+  display: flex;
+  justify-content: space-between;
+}
+
 .services-card-more {
-  position: relative;
-  z-index: 5;
-
-  width: fit-content;
   margin-top: auto;
-  padding: 18px 0 0;
-
   border: 0;
   background: transparent;
-
-  color: var(--blue);
-
+  color: var(--green);
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 760;
   line-height: 1;
   letter-spacing: 0;
   text-transform: none;
   text-decoration: none;
-
   transition:
     color 0.25s ease,
     transform 0.25s ease;
 }
 
 .services-card-more:hover {
-  color: var(--green);
+  color: var(--blue);
   transform: translateX(4px);
 }
 
 .services-card img {
-  position: absolute;
-  right: -6px;
-  bottom: 6px;
-  z-index: 1;
-
   width: 46%;
   max-width: 132px;
   height: auto;
-
   opacity: 0.82;
   mix-blend-mode: multiply;
-  filter: grayscale(1) brightness(1.08) contrast(1.04);
-
+  filter: grayscale(1) brightness(1) contrast(1.04);
   pointer-events: none;
-
   transition:
     transform 0.35s ease,
     opacity 0.35s ease,
@@ -1052,13 +1012,10 @@ button {
 .services-bottom {
   position: relative;
   z-index: 2;
-
   margin: 10px -32px 0;
   padding: 16px 32px 18px;
-
   background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
   color: var(--light);
-
   text-align: center;
   flex: 0 0 auto;
 }
@@ -1066,9 +1023,7 @@ button {
 .services-bottom p {
   max-width: 1120px;
   margin: 0 auto;
-
   color: var(--light);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(24px, 2.4vw, 38px);
   font-weight: 700;
@@ -1080,12 +1035,9 @@ button {
 
 .services-bottom span {
   display: block;
-
   max-width: 920px;
   margin: 8px auto 0;
-
   color: rgba(246, 246, 242, 0.92);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 1vw, 16px);
   font-weight: 500;
@@ -1098,9 +1050,8 @@ button {
 .partners-section {
   height: calc(100svh - var(--header-height));
   max-height: calc(100svh - var(--header-height));
-  padding: 0 var(--section-padding-x) 20px;
+  padding: 25px var(--section-padding-x);
   background: var(--light);
-
   display: flex;
   align-items: stretch;
   overflow: hidden;
@@ -1108,37 +1059,25 @@ button {
 
 .partners-inner {
   position: relative;
-
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 22px 32px 0;
-
   display: grid;
   grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
-  gap: 24px;
-
   overflow: hidden;
-
   border: 1px solid var(--border);
   border-radius: 30px;
-
   background: #eeeeef;
-
   box-shadow: 0 0 80px rgba(21, 25, 24, 0.1);
 }
 
 .partners-media {
   position: relative;
   z-index: 2;
-
   min-height: 0;
   height: 100%;
   max-height: calc(100svh - var(--header-height) - 126px);
-
   overflow: hidden;
-
-  border-radius: 24px 24px 0 0;
   background: rgba(21, 25, 24, 0.08);
 }
 
@@ -1154,8 +1093,7 @@ button {
 .partners-content {
   position: relative;
   z-index: 2;
-
-  padding-bottom: 22px;
+  padding: 22px;
 }
 
 .partners-label {
@@ -1194,11 +1132,9 @@ button {
 
 .partners-content h2 {
   margin: 0 0 16px;
-
   color: var(--dark);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(30px, 3.25vw, 48px);
+  font-size: clamp(30px, 2.8vw, 48px);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: 0;
@@ -1233,18 +1169,14 @@ button {
 
 .partners-card::after {
   content: ">";
-
   position: absolute;
   right: -10px;
   bottom: -42px;
-
   color: rgba(14, 68, 243, 0.06);
-
   font-family: Arial, Helvetica, sans-serif;
   font-size: 150px;
   font-weight: 700;
   line-height: 1;
-
   transition:
     color 0.3s ease,
     transform 0.3s ease;
@@ -1296,11 +1228,8 @@ button {
 .partners-card h3 {
   position: relative;
   z-index: 2;
-
   margin: 0;
-
   color: var(--dark);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(16px, 1.1vw, 19px);
   font-weight: 700;
@@ -1374,9 +1303,8 @@ button {
 
 .consultation-section {
   max-height: calc(100svh - var(--header-height));
-  padding: 0 var(--section-padding-x) var(--section-gap);
+  padding: 25px var(--section-padding-x);
   background: var(--light);
-
   display: flex;
   align-items: center;
 }
@@ -1389,17 +1317,13 @@ button {
 
 .consultation-banner {
   position: relative;
-
   min-height: 390px;
   padding: 48px 54px;
-
   display: flex;
   align-items: center;
-
   overflow: hidden;
-
   border-radius: 34px;
-  background: linear-gradient(135deg, #173f97 0%, #0f46c8 55%, #2b6df0 100%);
+  background: linear-gradient(90deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
   box-shadow: 0 20px 60px rgba(21, 25, 24, 0.1);
 }
 
@@ -1526,11 +1450,15 @@ button {
 }
 
 .consultation-submit {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
   min-height: 54px;
   margin-top: 4px;
   padding: 15px 24px;
 
-  border: 0;
+  border: 1px solid #19985a;
   border-radius: 999px;
 
   background: #19985a;
@@ -1543,16 +1471,36 @@ button {
   letter-spacing: 0;
   text-transform: none;
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
+  cursor: pointer;
 
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.25s ease;
+}
+.consultation-submit::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: var(--light);
+  border-radius: inherit;
+
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
 .consultation-submit:hover {
-  transform: translateY(-2px);
-  background: #151918;
+  color: #19985a;
+  transform: translateY(-1px);
+  border-color: #19985a;
   box-shadow: 0 12px 24px rgba(21, 25, 24, 0.14);
+}
+.consultation-submit:hover::before {
+  transform: scaleX(1);
 }
 
 .consultation-manager {
@@ -1613,9 +1561,8 @@ button {
 
 .reviews-section {
   max-height: calc(100svh - var(--header-height));
-  padding: 0 var(--section-padding-x) var(--section-gap);
+  padding: 25px var(--section-padding-x);
   background: var(--light);
-
   display: flex;
   align-items: stretch;
 }
@@ -1689,7 +1636,7 @@ button {
   color: var(--dark);
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(48px, 5.3vw, 84px);
+  font-size: clamp(48px, 4.5vw, 84px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
@@ -1749,18 +1696,13 @@ button {
 .review-video-card {
   min-width: calc((100% - 54px) / 4);
   padding: 20px;
-
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
-
   border: 1px solid rgba(21, 25, 24, 0.08);
   border-radius: 24px;
-
   background: #ffffff;
   color: var(--dark);
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -1780,9 +1722,7 @@ button {
 
 .review-video-info h3 {
   margin: 0;
-
   color: var(--dark);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(22px, 1.6vw, 30px);
   font-weight: 700;
@@ -1793,9 +1733,7 @@ button {
 
 .review-video-info p {
   margin: 10px 0 0;
-
   color: rgba(21, 25, 24, 0.66);
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -1805,14 +1743,10 @@ button {
 
 .review-video {
   position: relative;
-
   width: 100%;
   aspect-ratio: 9 / 12;
-
   overflow: hidden;
-
   border-radius: 16px;
-
   background: linear-gradient(
     135deg,
     rgba(21, 25, 24, 0.08),
@@ -1824,7 +1758,6 @@ button {
 .review-video img {
   width: 100%;
   height: 100%;
-
   display: block;
   object-fit: cover;
   object-position: center;
@@ -1832,16 +1765,13 @@ button {
 
 .review-video::after {
   content: "";
-
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     180deg,
     rgba(21, 25, 24, 0.02) 0%,
     rgba(21, 25, 24, 0.12) 100%
   );
-
   pointer-events: none;
 }
 
@@ -1850,25 +1780,18 @@ button {
   left: 50%;
   top: 50%;
   z-index: 3;
-
   width: 64px;
   height: 64px;
-
   display: grid;
   place-items: center;
-
   border: 0;
   border-radius: 50%;
-
   background: rgba(246, 246, 242, 0.92);
   color: var(--green);
-
   font-size: 24px;
   line-height: 1;
-
   transform: translate(-50%, -50%);
   box-shadow: 0 14px 34px rgba(21, 25, 24, 0.18);
-
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -1884,7 +1807,7 @@ button {
 /* FOOTER */
 
 .footer {
-  padding: 0 var(--section-padding-x) 40px;
+  padding: 25px var(--section-padding-x);
   background: var(--light);
 }
 
@@ -2002,22 +1925,60 @@ button {
   gap: 10px;
 }
 
-.footer-socials a {
+.messenger-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
   width: 42px;
   height: 42px;
 
   display: grid;
   place-items: center;
 
+  border: 1px solid var(--green);
   border-radius: 50%;
+
   background: var(--green);
-  color: var(--light);
+  color: var(--light) !important;
 
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 11px;
   font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.25s ease;
+}
+.messenger-button::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: var(--light);
+  border-radius: inherit;
+
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
+.messenger-button:hover {
+  color: var(--green) !important;
+  transform: translateY(-2px);
+  border-color: var(--green);
+  box-shadow: 0 12px 24px rgba(21, 25, 24, 0.14);
+}
+
+.messenger-button:hover::before {
+  transform: scaleX(1);
 }
 
 .footer-bottom {
@@ -2690,6 +2651,62 @@ button {
     display: block;
   }
 
+  .mobile-header-consultation {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 44px;
+    padding: 13px 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--green);
+    border-radius: 16px;
+
+    background: var(--green);
+    color: var(--light);
+
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 760;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .mobile-header-consultation::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--light);
+    border-radius: inherit;
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s ease;
+  }
+
+  .mobile-header-consultation:hover {
+    color: var(--green);
+    transform: translateY(-1px);
+    border-color: var(--green);
+  }
+
+  .mobile-header-consultation:hover::before {
+    transform: scaleX(1);
+  }
+
   .video-banner-section,
   .services-section,
   .partners-section,
@@ -2891,11 +2908,12 @@ button {
     min-height: var(--header-height);
     padding: 8px 10px;
     border-radius: 0 0 20px 20px;
+    gap: 10px;
   }
 
   .logo {
-    width: 122px;
-    max-width: 122px;
+    width: 112px;
+    max-width: 112px;
     height: 40px;
   }
 
@@ -2915,6 +2933,15 @@ button {
   }
 
   .mobile-actions a {
+    font-size: 12px;
+  }
+
+  .mobile-header-consultation {
+    min-height: 40px;
+    padding: 11px 14px;
+
+    border-radius: 14px;
+
     font-size: 12px;
   }
 
