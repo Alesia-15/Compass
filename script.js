@@ -66,43 +66,32 @@ if (burger && mobileMenu) {
 
 // consultation modal
 
-const consultationModal = document.querySelector("#consultation-modal");
-const consultationOpenButtons = document.querySelectorAll(
-  ".consultation-modal-open",
+const consultationModal = document.querySelector(".consultation-modal");
+const openConsultationButtons = document.querySelectorAll(
+  ".js-open-consultation, .contact-link, .video-banner-button",
 );
-const consultationCloseButtons = document.querySelectorAll(
-  "[data-consultation-close]",
+const closeConsultationButtons = document.querySelectorAll(
+  ".consultation-modal-close, .consultation-modal-overlay",
 );
 
-function openConsultationModal(event) {
-  if (event) event.preventDefault();
-  if (!consultationModal) return;
+openConsultationButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
 
-  consultationModal.classList.add("is-open");
-  consultationModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("is-menu-open");
-}
-
-function closeConsultationModal() {
-  if (!consultationModal) return;
-
-  consultationModal.classList.remove("is-open");
-  consultationModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("is-menu-open");
-}
-
-consultationOpenButtons.forEach((button) => {
-  button.addEventListener("click", openConsultationModal);
+    if (consultationModal) {
+      consultationModal.classList.add("is-open");
+      document.body.classList.add("is-menu-open");
+    }
+  });
 });
 
-consultationCloseButtons.forEach((button) => {
-  button.addEventListener("click", closeConsultationModal);
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeConsultationModal();
-  }
+closeConsultationButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (consultationModal) {
+      consultationModal.classList.remove("is-open");
+      document.body.classList.remove("is-menu-open");
+    }
+  });
 });
 
 // services modal
