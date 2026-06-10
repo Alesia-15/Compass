@@ -300,6 +300,8 @@ document.addEventListener("keydown", (event) => {
     closeServiceModal();
     closeConsultationModal();
     closePolicyModal();
+    closeQuizModal();
+    closeSearchSuggestions();
   }
 });
 
