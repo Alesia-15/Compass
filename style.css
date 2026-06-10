@@ -600,7 +600,7 @@ button {
   font-weight: 760;
   line-height: 1.06;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .video-banner-subtitle {
@@ -702,14 +702,13 @@ button {
 /* SERVICES */
 
 .services-section {
-  height: calc(100svh - var(--header-height));
-  max-height: calc(100svh - var(--header-height));
+  min-height: calc(100svh - var(--header-height));
   padding: 25px var(--section-padding-x);
   background: var(--light);
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .services-top {
@@ -725,19 +724,6 @@ button {
   flex: 0 0 auto;
 
   background: linear-gradient(135deg, #0f4cdd 0%, #159a63 55%, #1fb879 100%);
-}
-
-.services-top-title {
-  margin: 0 0 8px;
-
-  color: #6b5cff;
-
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: clamp(16px, 1.15vw, 20px);
-  font-weight: 700;
-  line-height: 1.15;
-  text-align: center;
-  text-transform: none;
 }
 
 .services-search {
@@ -1063,13 +1049,12 @@ button {
 /* PARTNERS */
 
 .partners-section {
-  height: calc(100svh - var(--header-height));
-  max-height: calc(100svh - var(--header-height));
+  min-height: calc(100svh - var(--header-height));
   padding: 25px var(--section-padding-x);
   background: var(--light);
   display: flex;
   align-items: stretch;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .partners-inner {
@@ -1090,8 +1075,7 @@ button {
   position: relative;
   z-index: 2;
   min-height: 0;
-  height: 100%;
-  max-height: calc(100svh - var(--header-height) - 126px);
+  height: auto;
   overflow: hidden;
   background: rgba(21, 25, 24, 0.08);
 }
@@ -2126,25 +2110,6 @@ button {
   gap: 24px;
 }
 
-.consultation-modal-label {
-  margin: 0 0 18px;
-  padding: 12px 22px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 999px;
-  background: var(--green);
-  color: var(--light);
-
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
-  text-transform: none;
-}
-
 .consultation-modal-text h2 {
   max-width: 520px;
   margin: 0;
@@ -2169,64 +2134,6 @@ button {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-transform: none;
-}
-
-.consultation-modal-manager {
-  max-width: 320px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(21, 25, 24, 0.12);
-  border-radius: 24px;
-
-  background: rgba(255, 255, 255, 0.64);
-}
-
-.consultation-modal-photo {
-  height: 220px;
-
-  background: rgba(21, 25, 24, 0.08);
-}
-
-.consultation-modal-photo img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-.consultation-modal-manager-info {
-  padding: 16px 18px;
-
-  background: var(--dark);
-  color: var(--light);
-}
-
-.consultation-modal-manager-info strong {
-  display: block;
-
-  color: var(--light);
-
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: none;
-}
-
-.consultation-modal-manager-info span {
-  display: block;
-  margin-top: 6px;
-
-  color: rgba(246, 246, 242, 0.72);
-
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.35;
   text-transform: none;
 }
 
@@ -3079,12 +2986,6 @@ button {
     margin-bottom: 16px;
   }
 
-  .services-top-title {
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 1.15;
-  }
-
   .services-search {
     max-width: 100%;
   }
@@ -3320,11 +3221,6 @@ button {
     font-size: 26px;
   }
 
-  .consultation-modal-label {
-    padding: 12px 20px;
-    font-size: 12px;
-  }
-
   .consultation-modal-text h2 {
     padding-right: 44px;
     font-size: clamp(28px, 8vw, 40px);
@@ -3333,14 +3229,6 @@ button {
 
   .consultation-modal-text p:not(.consultation-modal-label) {
     font-size: 14px;
-  }
-
-  .consultation-modal-manager {
-    max-width: none;
-  }
-
-  .consultation-modal-photo {
-    height: 200px;
   }
 
   .consultation-modal-form {

@@ -51,12 +51,6 @@ if (burger && mobileMenu) {
     link.addEventListener("click", closeMenu);
   });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
-
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1100) {
       closeMenu();
@@ -67,31 +61,42 @@ if (burger && mobileMenu) {
 // consultation modal
 
 const consultationModal = document.querySelector(".consultation-modal");
+
 const openConsultationButtons = document.querySelectorAll(
-  ".js-open-consultation, .contact-link, .video-banner-button",
+  ".consultation-modal-open, .js-open-consultation",
 );
+
 const closeConsultationButtons = document.querySelectorAll(
-  ".consultation-modal-close, .consultation-modal-overlay",
+  ".consultation-modal-close, .consultation-modal-overlay, [data-consultation-close]",
 );
+
+function openConsultationModal() {
+  if (!consultationModal) return;
+
+  closeMenu();
+
+  consultationModal.classList.add("is-open");
+  consultationModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("is-menu-open");
+}
+
+function closeConsultationModal() {
+  if (!consultationModal) return;
+
+  consultationModal.classList.remove("is-open");
+  consultationModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("is-menu-open");
+}
 
 openConsultationButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
-
-    if (consultationModal) {
-      consultationModal.classList.add("is-open");
-      document.body.classList.add("is-menu-open");
-    }
+    openConsultationModal();
   });
 });
 
 closeConsultationButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (consultationModal) {
-      consultationModal.classList.remove("is-open");
-      document.body.classList.remove("is-menu-open");
-    }
-  });
+  button.addEventListener("click", closeConsultationModal);
 });
 
 // services modal
@@ -115,7 +120,7 @@ const serviceModalData = {
         <li>Лучшее предложение: анализируем полученную информацию и условия поставки; выбираем лучшее.</li>
       </ul>
       <p class="service-modal-result">
-        Результат: вы получаете решение для своего запроса с оптимальным соотношением цены, качества и сроков поставки от подтвержденного поставщика.
+        Результат: Вы получаете решение для своего запроса с оптимальным соотношением цены, качества и сроков поставки от подтвержденного поставщика.
       </p>
     `,
   },
@@ -132,7 +137,7 @@ const serviceModalData = {
         <li>Заключение сделки: фиксируем достигнутые договоренности, заключаем контракт, сопровождаем сделку.</li>
       </ul>
       <p class="service-modal-result">
-        Результат: вы снижаете риски, экономите время, получаете иностранного торгового партнера.
+        Результат: Вы снижаете риски, экономите время, получаете иностранного торгового партнера.
       </p>
     `,
   },
@@ -183,7 +188,7 @@ const serviceModalData = {
         <li>Запуск и сопровождение: запускаем процесс сопряженных поставок между странами с полным документальным оформлением.</li>
       </ul>
       <p class="service-modal-result">
-        Результат: вы экономите время и деньги, уменьшая срок поставки товара.
+        Результат: Вы экономите время и деньги, уменьшая срок поставки товара.
       </p>
     `,
   },
@@ -215,7 +220,7 @@ const serviceModalData = {
         <li>Консолидация и хранение: сборка, переупаковка, оптимизация количества грузовых мест.</li>
       </ul>
       <p class="service-modal-result">
-        Результат: вы получаете оптимизированный вариант загрузки товара, экономите время и деньги.
+        Результат: Вы получаете оптимизированный вариант загрузки товара, экономите время и деньги.
       </p>
     `,
   },
@@ -232,7 +237,7 @@ const serviceModalData = {
         <li>Проведение платежа: подготавливаем сопровождающие документы и проводим платеж по выбранному варианту финансовой логистики.</li>
       </ul>
       <p class="service-modal-result">
-        Результат: ваши поставщики получают деньги в срок, а вы — товар без срыва контрактных обязательств.
+        Результат: ваши поставщики получают деньги в срок, а Вы — товар без срыва контрактных обязательств.
       </p>
     `,
   },
@@ -244,6 +249,8 @@ function openServiceModal(serviceKey) {
   if (!serviceModal || !service || !serviceModalTitle || !serviceModalText) {
     return;
   }
+
+  closeMenu();
 
   serviceModalTitle.textContent = service.title;
   serviceModalText.innerHTML = service.html;
@@ -258,7 +265,10 @@ function closeServiceModal() {
 
   serviceModal.classList.remove("is-open");
   serviceModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("is-menu-open");
+
+  if (!consultationModal || !consultationModal.classList.contains("is-open")) {
+    document.body.classList.remove("is-menu-open");
+  }
 }
 
 serviceOpenButtons.forEach((button) => {
@@ -271,9 +281,24 @@ serviceCloseButtons.forEach((button) => {
   button.addEventListener("click", closeServiceModal);
 });
 
+// кнопка "Заказать" внутри окна услуги
+
+document.querySelectorAll(".service-modal-order").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    closeServiceModal();
+    openConsultationModal();
+  });
+});
+
+// close modals by Escape
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
+    closeMenu();
     closeServiceModal();
+    closeConsultationModal();
   }
 });
 
