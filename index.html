@@ -115,16 +115,26 @@
       >
         <div class="services-inner">
           <div class="services-top">
+            <h3 class="services-search-title">Какой товар Вы ищете?</h3>
             <div class="services-search">
               <input
+                class="services-search-input"
+                id="services-search-input"
                 type="text"
-                placeholder="Напишите название или вставьте ссылку на нужный товар"
+                autocomplete="off"
+                placeholder="Пальмовое масло (цистерна)"
                 aria-label="Напишите название или вставьте ссылку на нужный товар"
               />
-              <span class="services-search-icon" aria-hidden="true">
+
+              <button
+                class="services-search-button"
+                id="services-search-button"
+                type="button"
+                aria-label="Найти товар"
+              >
                 <svg
-                  width="16"
-                  height="16"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,16 +144,21 @@
                     cy="11"
                     r="6.5"
                     stroke="currentColor"
-                    stroke-width="1.6"
+                    stroke-width="2"
                   />
                   <path
                     d="M16 16L21 21"
                     stroke="currentColor"
-                    stroke-width="1.6"
+                    stroke-width="2"
                     stroke-linecap="round"
                   />
                 </svg>
-              </span>
+              </button>
+
+              <div
+                class="services-search-suggestions"
+                id="services-search-suggestions"
+              ></div>
             </div>
           </div>
           <div class="services-head">
@@ -825,6 +840,39 @@
             Заказать
           </button>
         </div>
+      </div>
+    </div>
+
+    <div class="quiz-modal" id="quiz-modal" aria-hidden="true">
+      <div class="quiz-modal-overlay" data-quiz-close></div>
+
+      <div
+        class="quiz-modal-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quiz-modal-title"
+      >
+        <button
+          class="quiz-modal-close"
+          type="button"
+          aria-label="Закрыть квиз"
+          data-quiz-close
+        >
+          ×
+        </button>
+
+        <div class="quiz-modal-head">
+          <p class="quiz-modal-label">Заявка на подбор товара</p>
+
+          <h2 id="quiz-modal-title">Уточним задачу</h2>
+
+          <div class="quiz-product">
+            <span>Товар:</span>
+            <strong id="quiz-product-name">Пальмовое масло (цистерна)</strong>
+          </div>
+        </div>
+
+        <div class="quiz-modal-body" id="quiz-modal-body"></div>
       </div>
     </div>
 

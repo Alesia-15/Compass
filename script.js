@@ -408,3 +408,477 @@ reviewPlayButtons.forEach((button) => {
     }
   });
 });
+
+// services search rotating examples + quiz
+
+const productExamples = [
+  "Пальмовое масло (цистерна)",
+  "Фреза концевая по металлу",
+  "Шоколадка Milka — опт коробка",
+  "Гидравлический листогибочный пресс",
+  "Промышленный контроллер Siemens S7-1200",
+  "Сальники радиальные",
+  "Линия продольной резки металла",
+  "Автоматический выключатель Schneider Electric (упаковка)",
+  "Ленточнопильный станок по металлу",
+  "Футболка Gildan",
+  "Fruit of the Loom (белая, паллета 1000 шт)",
+  "Координатно-расточной станок",
+  "Клеммная колодка Wago / Weidmüller (упаковка 100 шт)",
+  "Молочная сыворотка сухая (мешок 25 кг)",
+  "Пудра фиксирующая для волос (салонный объём)",
+  "Дизельный генератор на 100 кВт (б/у из ЕС)",
+  "Сварочная проволока (ER70S-6, катушка 5 кг / 15 кг)",
+  "Промышленный вентилятор радиальный",
+  "Глюкозный сироп (IBC-контейнер 1000 кг)",
+  "Промышленный осушитель сжатого воздуха",
+  "Линейный подшипник SC20UU",
+  "Какао-порошок",
+  "Мотор-редуктор (Sew / Nord / Lenze)",
+  "Электродвигатель 7,5 кВт IE3",
+  "Погружной насос для скважины Grundfos 5 кВт",
+  "Кондитерская глазурь — мешок 25 кг",
+  "Электроды паллета",
+  "Токарно-винторезный станок",
+  "Свёрла по металлу с кобальтом",
+  "Датчик приближения PNP NO M12",
+  "Полипропилен",
+  "Соевый лецитин",
+  "ПВХ-компаунд",
+  "Крем Nivea Soft",
+  "Термобельё оптом",
+  "Промышленный холодильник",
+  "Шампунь Elseve / Gliss Kur",
+  "Компрессор винтовой 22 кВт",
+  "Kinder Surprise",
+  "Сварочный робот-манипулятор",
+  "Карбонат кальция",
+  "Джинсы Lee Cooper / Wrangler",
+  "Лимонная кислота",
+  "Метчики и плашки",
+  "Сменные пластины для токарных резцов",
+  "Гель для душа Fa",
+  "Фанта (Fanta) 1 л",
+  "Nutella 3 кг — промышленная упаковка",
+  "Реле времени и промежуточные реле",
+  "Винты DIN 912 M4x12 мм",
+  "Зубная паста Paradontax / Lacalut",
+  "Гигиеническая помада Labello Classic",
+  "Подшипник SKF / FAG / NSK",
+  "Лепестковые торцевые щётки",
+];
+
+const servicesSearchInput = document.querySelector("#services-search-input");
+const servicesSearchButton = document.querySelector("#services-search-button");
+const servicesSearchSuggestions = document.querySelector(
+  "#services-search-suggestions",
+);
+
+let productExampleIndex = 0;
+let productPlaceholderTimer = null;
+
+function startProductPlaceholderRotation() {
+  if (!servicesSearchInput) return;
+
+  stopProductPlaceholderRotation();
+
+  productPlaceholderTimer = setInterval(() => {
+    if (
+      document.activeElement === servicesSearchInput ||
+      servicesSearchInput.value.trim()
+    ) {
+      return;
+    }
+
+    productExampleIndex =
+      productExampleIndex >= productExamples.length - 1
+        ? 0
+        : productExampleIndex + 1;
+
+    servicesSearchInput.placeholder = productExamples[productExampleIndex];
+  }, 1500);
+}
+
+function stopProductPlaceholderRotation() {
+  if (productPlaceholderTimer) {
+    clearInterval(productPlaceholderTimer);
+    productPlaceholderTimer = null;
+  }
+}
+
+function closeSearchSuggestions() {
+  if (!servicesSearchSuggestions) return;
+
+  servicesSearchSuggestions.classList.remove("is-open");
+  servicesSearchSuggestions.innerHTML = "";
+}
+
+function renderSearchSuggestions(value) {
+  if (!servicesSearchSuggestions) return;
+
+  const query = value.trim().toLowerCase();
+
+  if (!query) {
+    closeSearchSuggestions();
+    return;
+  }
+
+  const matches = productExamples
+    .filter((item) => item.toLowerCase().includes(query))
+    .slice(0, 7);
+
+  if (!matches.length) {
+    closeSearchSuggestions();
+    return;
+  }
+
+  servicesSearchSuggestions.innerHTML = matches
+    .map(
+      (item) => `
+        <button class="search-suggestion" type="button">
+          ${item}
+        </button>
+      `,
+    )
+    .join("");
+
+  servicesSearchSuggestions.classList.add("is-open");
+
+  servicesSearchSuggestions
+    .querySelectorAll(".search-suggestion")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        servicesSearchInput.value = button.textContent.trim();
+        closeSearchSuggestions();
+      });
+    });
+}
+
+function getSelectedProductName() {
+  if (!servicesSearchInput) {
+    return productExamples[productExampleIndex];
+  }
+
+  return (
+    servicesSearchInput.value.trim() ||
+    servicesSearchInput.placeholder ||
+    productExamples[productExampleIndex]
+  );
+}
+
+if (servicesSearchInput) {
+  servicesSearchInput.placeholder = productExamples[0];
+  startProductPlaceholderRotation();
+
+  servicesSearchInput.addEventListener("focus", () => {
+    stopProductPlaceholderRotation();
+
+    if (!servicesSearchInput.value.trim()) {
+      servicesSearchInput.placeholder = "Введите название товара";
+    }
+  });
+
+  servicesSearchInput.addEventListener("input", () => {
+    renderSearchSuggestions(servicesSearchInput.value);
+  });
+
+  servicesSearchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      openQuizModal(getSelectedProductName());
+    }
+
+    if (event.key === "Escape") {
+      closeSearchSuggestions();
+    }
+  });
+
+  servicesSearchInput.addEventListener("blur", () => {
+    setTimeout(() => {
+      closeSearchSuggestions();
+
+      if (!servicesSearchInput.value.trim()) {
+        startProductPlaceholderRotation();
+      }
+    }, 150);
+  });
+}
+
+servicesSearchButton?.addEventListener("click", () => {
+  openQuizModal(getSelectedProductName());
+});
+
+// quiz modal
+
+const quizModal = document.querySelector("#quiz-modal");
+const quizProductName = document.querySelector("#quiz-product-name");
+const quizModalBody = document.querySelector("#quiz-modal-body");
+const quizCloseButtons = document.querySelectorAll("[data-quiz-close]");
+
+const quizSteps = [
+  {
+    step: "Шаг 1",
+    title: "Для кого требуется услуга?",
+    key: "clientType",
+    options: [
+      { label: "Юридическое лицо / ИП" },
+      { label: "Физическое лицо" },
+      { label: "Иной статус", input: true, placeholder: "Укажите ваш статус" },
+    ],
+  },
+  {
+    step: "Шаг 2",
+    title: "На каком этапе находится ваш запрос?",
+    key: "requestStage",
+    options: [
+      { label: "Есть поставщик и товар" },
+      { label: "Есть товар, нужен поставщик" },
+      { label: "Есть поставщик, нужен товар" },
+      { label: "Нужна помощь на всех этапах" },
+      {
+        label: "Другой запрос",
+        input: true,
+        placeholder: "Опишите ваш запрос",
+      },
+    ],
+  },
+  {
+    step: "Шаг 3",
+    title: "Информация о товаре?",
+    key: "productInfo",
+    options: [
+      { label: "Код ТН ВЭД", input: true, placeholder: "Введите код ТН ВЭД" },
+      {
+        label: "Наименование товара",
+        input: true,
+        placeholder: "Введите наименование товара",
+      },
+      {
+        label: "Ссылка или спецификация",
+        input: true,
+        placeholder: "Вставьте ссылку или краткую спецификацию",
+      },
+      { label: "Пока нет информации" },
+      {
+        label: "Другие вводные",
+        input: true,
+        placeholder: "Опишите вводные данные",
+      },
+    ],
+  },
+  {
+    step: "Шаг 4",
+    title: "Какая услуга вас интересует?",
+    key: "serviceType",
+    options: [
+      { label: "Закупка" },
+      { label: "Логистика и доставка" },
+      { label: "Закупка + логистика" },
+      { label: "Решение под ключ" },
+      { label: "Иная услуга", input: true, placeholder: "Укажите услугу" },
+    ],
+  },
+];
+
+let quizCurrentStep = 0;
+let quizAnswers = {};
+let quizProduct = "";
+
+function openQuizModal(productName) {
+  if (!quizModal || !quizModalBody || !quizProductName) return;
+
+  quizProduct = productName;
+  quizCurrentStep = 0;
+  quizAnswers = {};
+
+  quizProductName.textContent = quizProduct;
+
+  closeSearchSuggestions();
+  closeMenu();
+
+  quizModal.classList.add("is-open");
+  quizModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("is-menu-open");
+
+  renderQuizStep();
+}
+
+function closeQuizModal() {
+  if (!quizModal) return;
+
+  quizModal.classList.remove("is-open");
+  quizModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("is-menu-open");
+}
+
+function renderQuizStep() {
+  if (!quizModalBody) return;
+
+  const step = quizSteps[quizCurrentStep];
+
+  if (!step) {
+    renderQuizFinal();
+    return;
+  }
+
+  quizModalBody.innerHTML = `
+    <p class="quiz-step-number">${step.step}</p>
+
+    <h3 class="quiz-step-title">${step.title}</h3>
+
+    <div class="quiz-options">
+      ${step.options
+        .map((option, index) => {
+          if (option.input) {
+            return `
+              <div class="quiz-option-field">
+                <label>
+                  <span>${option.label}</span>
+                  <input
+                    class="quiz-inline-input"
+                    type="text"
+                    placeholder="${option.placeholder || ""}"
+                    data-option-index="${index}"
+                  />
+                </label>
+
+                <button
+                  class="quiz-option-submit"
+                  type="button"
+                  data-option-index="${index}"
+                >
+                  Далее
+                </button>
+              </div>
+            `;
+          }
+
+          return `
+            <button class="quiz-option" type="button" data-answer="${option.label}">
+              ${option.label}
+            </button>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+
+  quizModalBody.querySelectorAll(".quiz-option").forEach((button) => {
+    button.addEventListener("click", () => {
+      quizAnswers[step.key] = button.dataset.answer;
+      quizCurrentStep += 1;
+      renderQuizStep();
+    });
+  });
+
+  quizModalBody.querySelectorAll(".quiz-option-submit").forEach((button) => {
+    button.addEventListener("click", () => {
+      const optionIndex = Number(button.dataset.optionIndex);
+      const option = step.options[optionIndex];
+      const input = quizModalBody.querySelector(
+        `.quiz-inline-input[data-option-index="${optionIndex}"]`,
+      );
+
+      const value = input?.value.trim();
+
+      if (!value) {
+        alert("Пожалуйста, заполните поле");
+        input?.focus();
+        return;
+      }
+
+      quizAnswers[step.key] = `${option.label}: ${value}`;
+      quizCurrentStep += 1;
+      renderQuizStep();
+    });
+  });
+
+  quizModalBody.querySelectorAll(".quiz-inline-input").forEach((input) => {
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+
+        const optionIndex = Number(input.dataset.optionIndex);
+        const button = quizModalBody.querySelector(
+          `.quiz-option-submit[data-option-index="${optionIndex}"]`,
+        );
+
+        button?.click();
+      }
+    });
+  });
+}
+
+function renderQuizFinal() {
+  if (!quizModalBody) return;
+
+  quizModalBody.innerHTML = `
+    <p class="quiz-step-number">Шаг 5</p>
+
+    <h3 class="quiz-step-title">Оставьте контакты для расчёта</h3>
+
+    <p class="quiz-final-text">
+      Мы закрепили товар в заявке. Ответы по предыдущим шагам сохранены,
+      но на экране остаётся только выбранный товар.
+    </p>
+
+    <input
+      class="quiz-field"
+      type="text"
+      id="quiz-name"
+      placeholder="Имя"
+      autocomplete="name"
+    />
+
+    <input
+      class="quiz-field"
+      type="tel"
+      id="quiz-phone"
+      placeholder="Телефон"
+      autocomplete="tel"
+      style="margin-top: 12px"
+    />
+
+    <button class="quiz-next" type="button" id="quiz-submit">
+      Отправить заявку
+    </button>
+  `;
+
+  document.querySelector("#quiz-submit")?.addEventListener("click", () => {
+    const name = document.querySelector("#quiz-name")?.value.trim();
+    const phone = document.querySelector("#quiz-phone")?.value.trim();
+
+    if (!name || !phone) {
+      alert("Пожалуйста, заполните имя и телефон");
+      return;
+    }
+
+    console.log("Квиз заявка:", {
+      product: quizProduct,
+      answers: quizAnswers,
+      name,
+      phone,
+    });
+
+    quizModalBody.innerHTML = `
+      <h3 class="quiz-step-title">Спасибо! Заявка сформирована</h3>
+
+      <p class="quiz-final-text">
+        Мы получили запрос по товару: <strong>${quizProduct}</strong>.
+        Менеджер свяжется с вами для уточнения деталей.
+      </p>
+
+      <button class="quiz-next" type="button" data-quiz-close>
+        Закрыть
+      </button>
+    `;
+
+    quizModalBody
+      .querySelector("[data-quiz-close]")
+      ?.addEventListener("click", closeQuizModal);
+  });
+}
+
+quizCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeQuizModal);
+});
