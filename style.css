@@ -1929,52 +1929,45 @@ button {
 
 .footer-socials {
   margin-top: 18px;
-
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .messenger-button {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-
   width: 42px;
   height: 42px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid var(--green);
   border-radius: 50%;
-
   background: var(--green);
   color: var(--light) !important;
-
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 11px;
   font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
-
   transition:
     color 0.3s ease,
     transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.25s ease;
+  flex: 0 0 auto;
 }
+
 .messenger-button::before {
   content: "";
-
   position: absolute;
   inset: 0;
   z-index: -1;
-
   background: var(--light);
   border-radius: inherit;
-
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.35s ease;
@@ -3783,4 +3776,139 @@ button {
   background: var(--green);
   border-color: var(--green);
   transform: translateY(-1px);
+}
+
+.policy-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.policy-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.policy-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 25, 24, 0.66);
+  backdrop-filter: blur(8px);
+}
+
+.policy-modal-window {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 980px;
+  max-height: calc(100svh - 48px);
+  padding: 36px;
+  overflow-y: auto;
+  border-radius: 30px;
+  background: #ffffff;
+  color: var(--dark);
+  box-shadow: 0 30px 100px rgba(21, 25, 24, 0.28);
+}
+
+.policy-modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--dark);
+  color: var(--light);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.policy-modal-content {
+  clear: both;
+  max-width: 860px;
+  margin: 0 auto;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.policy-modal-content h2 {
+  margin: 18px 0 8px;
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1.12;
+}
+
+.policy-modal-content h3 {
+  margin: 28px 0 12px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.policy-modal-content p {
+  margin: 0 0 10px;
+  color: rgba(21, 25, 24, 0.76);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.policy-approve {
+  margin-bottom: 4px !important;
+  text-align: right;
+  font-size: 12px !important;
+}
+
+.policy-doc-subtitle {
+  margin-bottom: 22px !important;
+  color: rgba(21, 25, 24, 0.7);
+  font-weight: 700;
+}
+
+.policy-bullet {
+  padding-left: 18px;
+}
+
+.footer-policy-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.footer-policy-link:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 640px) {
+  .policy-modal {
+    padding: 12px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .policy-modal-window {
+    max-height: none;
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .policy-modal-content p {
+    font-size: 13px;
+  }
 }

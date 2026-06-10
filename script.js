@@ -299,6 +299,7 @@ document.addEventListener("keydown", (event) => {
     closeMenu();
     closeServiceModal();
     closeConsultationModal();
+    closePolicyModal();
   }
 });
 
@@ -881,4 +882,37 @@ function renderQuizFinal() {
 
 quizCloseButtons.forEach((button) => {
   button.addEventListener("click", closeQuizModal);
+});
+
+// Политика конфиденциальности и обработки персональных данных
+
+const policyModal = document.querySelector("#policy-modal");
+const policyOpenButtons = document.querySelectorAll(".js-open-policy");
+const policyCloseButtons = document.querySelectorAll("[data-policy-close]");
+
+function openPolicyModal() {
+  if (!policyModal) return;
+
+  policyModal.classList.add("is-open");
+  policyModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("is-menu-open");
+}
+
+function closePolicyModal() {
+  if (!policyModal) return;
+
+  policyModal.classList.remove("is-open");
+  policyModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("is-menu-open");
+}
+
+policyOpenButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    openPolicyModal();
+  });
+});
+
+policyCloseButtons.forEach((button) => {
+  button.addEventListener("click", closePolicyModal);
 });
