@@ -649,23 +649,37 @@ const quizSteps = [
     step: "Шаг 3",
     title: "Информация о товаре?",
     key: "productInfo",
+    productInfoStep: true,
     options: [
-      { label: "Код ТН ВЭД", input: true, placeholder: "Введите код ТН ВЭД" },
+      {
+        label: "Код ТН ВЭД",
+        value: "tnved",
+        placeholder: "Введите код ТН ВЭД",
+        hint: "Укажите 8 или 10 цифр кода",
+      },
       {
         label: "Наименование товара",
-        input: true,
+        value: "name",
         placeholder: "Введите наименование товара",
+        hint: "Например: промышленный насос, ткань, комплектующие",
       },
       {
         label: "Ссылка или спецификация",
-        input: true,
+        value: "spec",
         placeholder: "Вставьте ссылку или краткую спецификацию",
+        hint: "Можно вставить ссылку, артикул или описание",
       },
-      { label: "Пока нет информации" },
       {
         label: "Другие вводные",
-        input: true,
+        value: "other",
         placeholder: "Опишите вводные данные",
+        hint: "Напишите всё, что известно о товаре или задаче",
+      },
+      {
+        label: "Пропустить",
+        value: "skip",
+        placeholder: "",
+        hint: "Можно продолжить без информации о товаре",
       },
     ],
   },
@@ -721,6 +735,11 @@ function renderQuizStep() {
 
   if (!step) {
     renderQuizFinal();
+    return;
+  }
+
+  if (step.productInfoStep) {
+    renderProductInfoStep(step);
     return;
   }
 
@@ -810,6 +829,136 @@ function renderQuizStep() {
       }
     });
   });
+}
+
+function renderProductInfoStep(step) {
+  if (!quizModalBody) return;
+
+  quizModalBody.innerHTML = `
+    <p class="quiz-step-number">${step.step}</p>
+
+    <h3 class="quiz-step-title">${step.title}</h3>
+
+    <p class="quiz-step-text">
+      Укажите любую информацию, которая есть под рукой. Это поможет нам лучше
+      понять ваш запрос.
+    </p>
+
+    <div class="quiz-info-options">
+      ${step.options
+        .map(
+          (option, index) => `
+            <label class="quiz-info-option ${
+              index === step.options.length - 1 ? "quiz-info-option-wide" : ""
+            }">
+              <input
+                type="radio"
+                name="product_info_type"
+                value="${option.value}"
+                data-label="${option.label}"
+                data-placeholder="${option.placeholder || ""}"
+                data-hint="${option.hint || ""}"
+                ${index === 0 ? "checked" : ""}
+              />
+
+              <span class="quiz-info-check" aria-hidden="true"></span>
+              <span class="quiz-info-title">${option.label}</span>
+            </label>
+          `,
+        )
+        .join("")}
+    </div>
+
+    <div class="quiz-single-input-wrap">
+      <input
+        class="quiz-single-input"
+        type="text"
+        placeholder="${step.options[0].placeholder || ""}"
+      />
+
+      <small class="quiz-single-hint">${step.options[0].hint || ""}</small>
+    </div>
+
+    <button class="quiz-next-button" type="button">
+      Далее
+    </button>
+  `;
+
+  const radios = quizModalBody.querySelectorAll(
+    'input[name="product_info_type"]',
+  );
+
+  const inputWrap = quizModalBody.querySelector(".quiz-single-input-wrap");
+  const input = quizModalBody.querySelector(".quiz-single-input");
+  const hint = quizModalBody.querySelector(".quiz-single-hint");
+  const nextButton = quizModalBody.querySelector(".quiz-next-button");
+
+  function updateInput() {
+    const checkedRadio = quizModalBody.querySelector(
+      'input[name="product_info_type"]:checked',
+    );
+
+    if (!checkedRadio || !inputWrap || !input) return;
+
+    const placeholder = checkedRadio.dataset.placeholder || "";
+    const hintText = checkedRadio.dataset.hint || "";
+
+    if (checkedRadio.value === "skip") {
+      inputWrap.classList.add("is-hidden");
+      input.value = "";
+
+      if (hint) {
+        hint.textContent = hintText;
+      }
+
+      return;
+    }
+
+    inputWrap.classList.remove("is-hidden");
+    input.placeholder = placeholder;
+
+    if (hint) {
+      hint.textContent = hintText;
+    }
+
+    input.focus();
+  }
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", updateInput);
+  });
+
+  nextButton?.addEventListener("click", () => {
+    const checkedRadio = quizModalBody.querySelector(
+      'input[name="product_info_type"]:checked',
+    );
+
+    if (!checkedRadio) return;
+
+    const label = checkedRadio.dataset.label || checkedRadio.value;
+    const value = input?.value.trim() || "";
+
+    if (checkedRadio.value !== "skip" && !value) {
+      alert("Пожалуйста, заполните поле или выберите «Пропустить»");
+      input?.focus();
+      return;
+    }
+
+    quizAnswers[step.key] =
+      checkedRadio.value === "skip" ? "Пропустить" : `${label}: ${value}`;
+
+    quizCurrentStep += 1;
+    renderQuizStep();
+  });
+
+  input?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      nextButton?.click();
+    }
+  });
+
+  updateInput();
 }
 
 function renderQuizFinal() {
