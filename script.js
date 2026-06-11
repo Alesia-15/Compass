@@ -918,3 +918,24 @@ policyOpenButtons.forEach((button) => {
 policyCloseButtons.forEach((button) => {
   button.addEventListener("click", closePolicyModal);
 });
+
+// Раскрытие текста
+
+const aboutContent = document.querySelector(".about-content");
+const aboutMoreButton = document.querySelector(".about-more-button");
+
+if (aboutContent && aboutMoreButton) {
+  const aboutMoreButtonText = aboutMoreButton.querySelector("span:first-child");
+
+  aboutMoreButton.addEventListener("click", () => {
+    const isOpen = aboutContent.classList.toggle("is-open");
+
+    aboutMoreButton.setAttribute("aria-expanded", String(isOpen));
+
+    if (aboutMoreButtonText) {
+      aboutMoreButtonText.textContent = isOpen
+        ? "Скрыть"
+        : "Раскрыть полностью";
+    }
+  });
+}
