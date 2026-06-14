@@ -152,7 +152,16 @@
       >
         <div class="video-banner">
           <div class="video-banner-bg" aria-hidden="true">
-            <img src="./Images/video-placeholder.jpg" alt="" />
+            <video
+              class="video-banner-file"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              <source src="./Images/banner.mp4" type="video/mp4" />
+            </video>
           </div>
 
           <div class="video-banner-overlay"></div>
@@ -172,8 +181,6 @@
               Получить консультацию
             </a>
           </div>
-
-          <div class="video-banner-play" aria-hidden="true">▶</div>
         </div>
       </section>
 
@@ -515,7 +522,7 @@
 
           <div class="partners-media">
             <img
-              src="./Images/partners-photo.png"
+              src="./Images/team.PNG"
               alt="Команда работает над логистическим проектом"
             />
           </div>
@@ -798,7 +805,7 @@
               <div class="consultation-manager">
                 <div class="consultation-manager-photo">
                   <img
-                    src="./Images/manager-photo.jpg"
+                    src="./Images/director.PNG"
                     alt="Менеджер Компас Групп"
                   />
                 </div>
