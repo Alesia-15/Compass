@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /manager/
+Disallow: /core/
+Disallow: /connectors/
+Disallow: /assets/components/
+Disallow: /index.php
+
+Allow: /assets/template/
+Allow: /assets/images/
+Allow: /assets/template/css/
+Allow: /assets/template/js/
+Allow: /assets/template/images/
+Allow: /assets/template/fonts/
+
+Host: compass-group.by
+Sitemap: https://compass-group.by/sitemap.xml

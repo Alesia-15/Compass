@@ -1088,3 +1088,36 @@ if (aboutContent && aboutMoreButton) {
     }
   });
 }
+
+// Cookie notice
+
+const cookieNotice = document.querySelector("#cookie-notice");
+const cookieAcceptButton = document.querySelector("#cookie-accept");
+const cookieStorageKey = "compass_cookie_accepted";
+
+function openCookieNotice() {
+  if (!cookieNotice) return;
+
+  cookieNotice.classList.add("is-open");
+  cookieNotice.setAttribute("aria-hidden", "false");
+}
+
+function closeCookieNotice() {
+  if (!cookieNotice) return;
+
+  cookieNotice.classList.remove("is-open");
+  cookieNotice.setAttribute("aria-hidden", "true");
+}
+
+if (cookieNotice && cookieAcceptButton) {
+  const isCookieAccepted = localStorage.getItem(cookieStorageKey) === "true";
+
+  if (!isCookieAccepted) {
+    setTimeout(openCookieNotice, 800);
+  }
+
+  cookieAcceptButton.addEventListener("click", () => {
+    localStorage.setItem(cookieStorageKey, "true");
+    closeCookieNotice();
+  });
+}

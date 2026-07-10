@@ -1,0 +1,90 @@
+/* FONTS */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./Fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neutral Face";
+  src: url("./Fonts/Neutral_face/NeutralFace.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neutral Face";
+  src: url("./Fonts/Neutral_face/NeutralFace-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./Fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adderley";
+  src: url("./Fonts/Adderley/Adderley_Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adderley";
+  src: url("./Fonts/Adderley/Adderley_Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adderley";
+  src: url("./Fonts/Adderley/Adderley_Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adderley";
+  src: url("./Fonts/Adderley/Adderley_Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adderley";
+  src: url("./Fonts/Adderley/Adderley_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
