@@ -2474,8 +2474,8 @@ h2#video-banner-title {
 
 /* CONSULTATION */
 .consultation-banner::after {
-  left: 22%;
-  top: 0;
+  left: 62%;
+  top: -3%;
   color: rgba(255, 255, 255, 0.15);
 }
 
