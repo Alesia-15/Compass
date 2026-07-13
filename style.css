@@ -4293,10 +4293,8 @@ h2#video-banner-title {
 
   .partners-title {
     margin: 0;
-    font-size: clamp(20px, 8vw, 50px) !important;
-    line-height: 1 !important;
-    font-stretch: condensed;
-    text-transform: uppercase !important;
+    font-size: clamp(20px, 10vw, 50px) !important;
+    letter-spacing: 0 !important;
   }
 
   .partners-title-logo {
