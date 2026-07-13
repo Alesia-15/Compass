@@ -4295,7 +4295,6 @@ h2#video-banner-title {
     margin: 0;
     font-size: clamp(20px, 8vw, 50px) !important;
     line-height: 1 !important;
-    font-family: "Roboto" !important;
     font-stretch: condensed;
     text-transform: uppercase !important;
   }
