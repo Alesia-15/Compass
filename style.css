@@ -721,7 +721,7 @@ h2#video-banner-title {
   max-width: 1120px;
   margin: 0 auto;
   color: var(--light);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: "Adderley", sans-serif;
   font-size: clamp(24px, 2.4vw, 32px);
   font-weight: 700;
   line-height: 1.08;
@@ -900,7 +900,7 @@ h2#video-banner-title {
 .consultation-copy h2 {
   margin: 0 0 22px;
   color: var(--light);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: "Adderley", sans-serif;
   font-size: clamp(30px, 3vw, 46px);
   font-weight: 700;
   line-height: 1.08;
