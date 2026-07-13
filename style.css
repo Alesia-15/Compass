@@ -502,7 +502,7 @@ main {
 .video-banner-content h1 {
   margin: 0;
   color: var(--light);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: "Adderley", sans-serif;
   font-size: clamp(48px, 4.8vw, 68px);
   font-weight: 760;
   line-height: 1.06;
@@ -2613,9 +2613,6 @@ h2#video-banner-title {
   margin: 0 !important;
   display: grid;
   gap: 2px;
-  color: var(--dark);
-  letter-spacing: -0.04em !important;
-  text-transform: uppercase;
 }
 
 .partners-title span {
@@ -3882,7 +3879,6 @@ h2#video-banner-title {
   .about-head h2 {
     font-size: clamp(34px, 9vw, 48px);
     line-height: 0.96;
-    letter-spacing: -0.05em;
   }
 
   .about-content {
