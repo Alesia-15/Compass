@@ -4610,7 +4610,6 @@ h2#video-banner-title {
 
   /* SERVICES */
   .services-card::after {
-    right: 18%;
     bottom: 14%;
     font-size: 116px;
   }
