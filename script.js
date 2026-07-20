@@ -1134,3 +1134,48 @@ if (cookieNotice && cookieAcceptButton) {
     closeCookieNotice();
   });
 }
+
+// VIDEO SOUND
+
+const bannerVideo = document.querySelector(".video-banner-bg video");
+const soundToggle = document.querySelector(".video-sound-toggle");
+const soundIcon = document.querySelector(".video-sound-icon");
+const soundText = document.querySelector(".video-sound-text");
+
+if (bannerVideo && soundToggle) {
+  bannerVideo.muted = true;
+
+  soundToggle.addEventListener("click", async () => {
+    const shouldEnableSound = bannerVideo.muted;
+
+    bannerVideo.muted = !shouldEnableSound;
+
+    if (shouldEnableSound) {
+      try {
+        await bannerVideo.play();
+      } catch (error) {
+        console.error("Не удалось запустить видео со звуком:", error);
+      }
+    }
+
+    soundToggle.classList.toggle("is-active", shouldEnableSound);
+    soundToggle.setAttribute(
+      "aria-pressed",
+      shouldEnableSound ? "true" : "false",
+    );
+    soundToggle.setAttribute(
+      "aria-label",
+      shouldEnableSound ? "Выключить звук" : "Включить звук",
+    );
+
+    if (soundIcon) {
+      soundIcon.textContent = shouldEnableSound ? "🔊" : "🔇";
+    }
+
+    if (soundText) {
+      soundText.textContent = shouldEnableSound
+        ? "Выключить звук"
+        : "Включить звук";
+    }
+  });
+}

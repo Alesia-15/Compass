@@ -586,6 +586,54 @@ h2#video-banner-title {
   transform: scaleX(1);
 }
 
+.video-sound-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 5;
+
+  min-height: 46px;
+  padding: 12px 18px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+
+  background: rgba(21, 25, 24, 0.48);
+  color: #ffffff;
+
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.video-sound-toggle:hover {
+  background: rgba(21, 152, 90, 0.82);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.video-sound-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.video-sound-toggle.is-active {
+  background: rgba(21, 152, 90, 0.88);
+}
+
 /* ABOUT */
 .about-content {
   display: grid;
@@ -4522,6 +4570,18 @@ h2#video-banner-title {
   .consultation-banner::after,
   .about-head::after {
     font-size: 170px;
+  }
+
+  .video-sound-toggle {
+    top: 16px;
+    right: 16px;
+    min-height: 42px;
+    padding: 11px 14px;
+    font-size: 12px;
+  }
+
+  .video-sound-icon {
+    font-size: 16px;
   }
 
   /* ABOUT */
