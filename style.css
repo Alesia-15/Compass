@@ -353,6 +353,28 @@ main {
   height: 20px;
 }
 
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  display: none;
+  background: rgba(21, 25, 24, 0.25);
+  backdrop-filter: blur(2px);
+}
+
+.mobile-menu-overlay.is-open {
+  display: block;
+}
+
+.mobile-menu {
+  position: relative;
+  z-index: 999;
+}
+
+.site-header {
+  z-index: 1000;
+}
+
 .header-inner {
   width: 100%;
   max-width: var(--container);

@@ -1,7 +1,8 @@
-// burger
+// MOBILE MENU
 
 const burger = document.querySelector(".burger");
 const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
 const mobileLinks = document.querySelectorAll(
   ".mobile-nav a, .mobile-actions a",
 );
@@ -16,6 +17,8 @@ function closeMenu() {
   mobileMenu.classList.remove("is-open");
   mobileMenu.setAttribute("aria-hidden", "true");
 
+  mobileMenuOverlay?.classList.remove("is-open");
+
   document.body.classList.remove("is-menu-open");
 }
 
@@ -29,13 +32,15 @@ function openMenu() {
   mobileMenu.classList.add("is-open");
   mobileMenu.setAttribute("aria-hidden", "false");
 
+  mobileMenuOverlay?.classList.add("is-open");
+
   document.body.classList.add("is-menu-open");
 }
 
 function toggleMenu() {
   if (!burger || !mobileMenu) return;
 
-  const isOpen = burger.classList.contains("is-active");
+  const isOpen = mobileMenu.classList.contains("is-open");
 
   if (isOpen) {
     closeMenu();
@@ -49,6 +54,14 @@ if (burger && mobileMenu) {
 
   mobileLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
+  });
+
+  mobileMenuOverlay?.addEventListener("click", closeMenu);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
   });
 
   window.addEventListener("resize", () => {
