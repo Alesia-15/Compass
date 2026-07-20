@@ -673,13 +673,84 @@ h2#video-banner-title {
   content: ">";
   position: absolute;
   z-index: 1;
-  color: rgb(31 184 121 / 20%);
+  color: rgb(31 184 121 / 14%);
   font-size: 100px;
   font-weight: 900;
   line-height: 1;
-  transform: translateX(-12px);
   right: -15px;
   top: -22px;
+  transform: translateX(-12px);
+  pointer-events: none;
+}
+
+.services-card:nth-child(1)::before {
+  content: ">>";
+  font-size: 72px;
+  top: -2px;
+  right: -2px;
+  letter-spacing: -10px;
+  transform: rotate(0deg);
+}
+
+.services-card:nth-child(2)::before {
+  content: ">";
+  font-size: 96px;
+  top: -18px;
+  right: -10px;
+  transform: rotate(0deg);
+}
+
+.services-card:nth-child(3)::before {
+  content: ">>>";
+  font-size: 62px;
+  top: 10px;
+  right: 4px;
+  letter-spacing: -9px;
+  transform: rotate(0deg);
+}
+
+.services-card:nth-child(4)::before {
+  content: ">>>>";
+  font-size: 58px;
+  top: 10px;
+  right: 4px;
+  letter-spacing: -9px;
+  transform: rotate(0deg);
+}
+
+.services-card:nth-child(5)::before {
+  content: ">>>";
+  font-size: 62px;
+  top: 10px;
+  right: 4px;
+  letter-spacing: -9px;
+  transform: rotate(0deg);
+}
+
+.services-card:nth-child(6)::before {
+  content: ">>";
+  font-size: 70px;
+  top: 4px;
+  right: 0;
+  letter-spacing: -10px;
+  transform: rotate(0deg);
+}
+
+.services-card:nth-child(7)::before {
+  content: ">";
+  font-size: 96px;
+  top: -18px;
+  right: -10px;
+  transform: rotate(0deg);
+}
+
+.services-card:nth-child(8)::before {
+  content: ">>";
+  font-size: 68px;
+  top: 5px;
+  right: 8px;
+  letter-spacing: -10px;
+  transform: rotate(0deg);
 }
 
 .services-card:hover {
@@ -832,7 +903,7 @@ h2#video-banner-title {
   position: absolute;
   right: -5px;
   top: -30px;
-  color: rgba(14, 68, 243, 0.06);
+  color: rgba(14, 68, 243, 0.05);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 150px;
   font-weight: 700;
@@ -840,6 +911,49 @@ h2#video-banner-title {
   transition:
     color 0.3s ease,
     transform 0.3s ease;
+  pointer-events: none;
+}
+
+.partners-card:nth-child(1)::after {
+  content: ">>";
+  font-size: 105px;
+  top: -2px;
+  right: 4px;
+  transform: rotate(0deg);
+  letter-spacing: -10px;
+}
+
+.partners-card:nth-child(2)::after {
+  content: ">";
+  font-size: 138px;
+  top: -20px;
+  right: -10px;
+  transform: rotate(270deg);
+}
+
+.partners-card:nth-child(3)::after {
+  content: ">";
+  font-size: 138px;
+  top: -20px;
+  right: -10px;
+  transform: rotate(90deg);
+}
+
+.partners-card:nth-child(4)::after {
+  content: ">";
+  font-size: 138px;
+  top: -20px;
+  right: -10px;
+  transform: rotate(0deg);
+}
+
+.partners-card:nth-child(5)::after {
+  content: ">>";
+  font-size: 105px;
+  top: -2px;
+  right: 4px;
+  transform: rotate(0deg);
+  letter-spacing: -10px;
 }
 
 .partners-card:hover {
@@ -851,7 +965,6 @@ h2#video-banner-title {
 
 .partners-card:hover::after {
   color: rgba(14, 68, 243, 0.1);
-  transform: translateX(10px);
 }
 
 .partners-bottom {
@@ -2899,7 +3012,67 @@ h2#video-banner-title {
   font-weight: 900;
   line-height: 1;
   pointer-events: none;
-  transform: translateX(-12px);
+  transform: rotate(90deg);
+}
+
+.services-card:nth-child(1)::after {
+  content: ">";
+  left: 12%;
+  bottom: 8%;
+  font-size: 122px;
+}
+
+.services-card:nth-child(2)::after {
+  content: ">>";
+  left: 10%;
+  bottom: 16%;
+  font-size: 82px;
+  letter-spacing: -11px;
+}
+
+.services-card:nth-child(3)::after {
+  content: ">";
+  left: 14%;
+  bottom: 7%;
+  font-size: 132px;
+}
+
+.services-card:nth-child(4)::after {
+  content: ">>>";
+  left: 8%;
+  bottom: 20%;
+  font-size: 64px;
+  letter-spacing: -9px;
+}
+
+.services-card:nth-child(5)::after {
+  content: ">";
+  left: 13%;
+  bottom: 5%;
+  font-size: 116px;
+}
+
+.services-card:nth-child(6)::after {
+  content: ">>";
+  left: 10%;
+  bottom: 16%;
+  font-size: 82px;
+  letter-spacing: -11px;
+}
+
+.services-card:nth-child(7)::after {
+  content: ">";
+  left: 16%;
+  bottom: 8%;
+  font-size: 130px;
+}
+
+.services-card:nth-child(8)::after {
+  content: ">>>";
+  left: 8%;
+  bottom: 20%;
+  font-size: 64px;
+  letter-spacing: -9px;
 }
 
 .services-card img {
