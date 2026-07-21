@@ -7,6 +7,10 @@ const mobileLinks = document.querySelectorAll(
   ".mobile-nav a, .mobile-actions a",
 );
 
+function isMenuOpen() {
+  return mobileMenu?.classList.contains("is-open") ?? false;
+}
+
 function closeMenu() {
   if (!burger || !mobileMenu) return;
 
@@ -18,6 +22,7 @@ function closeMenu() {
   mobileMenu.setAttribute("aria-hidden", "true");
 
   mobileMenuOverlay?.classList.remove("is-open");
+  mobileMenuOverlay?.setAttribute("tabindex", "-1");
 
   document.body.classList.remove("is-menu-open");
 }
@@ -33,16 +38,15 @@ function openMenu() {
   mobileMenu.setAttribute("aria-hidden", "false");
 
   mobileMenuOverlay?.classList.add("is-open");
+  mobileMenuOverlay?.setAttribute("tabindex", "0");
 
   document.body.classList.add("is-menu-open");
 }
 
-function toggleMenu() {
-  if (!burger || !mobileMenu) return;
+function toggleMenu(event) {
+  event?.preventDefault();
 
-  const isOpen = mobileMenu.classList.contains("is-open");
-
-  if (isOpen) {
+  if (isMenuOpen()) {
     closeMenu();
   } else {
     openMenu();
@@ -56,16 +60,35 @@ if (burger && mobileMenu) {
     link.addEventListener("click", closeMenu);
   });
 
-  mobileMenuOverlay?.addEventListener("click", closeMenu);
+  if (mobileMenuOverlay) {
+    // Обычные браузеры и современные версии Safari
+    mobileMenuOverlay.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      closeMenu();
+    });
+
+    // Резервный обработчик для старых версий iOS Safari
+    mobileMenuOverlay.addEventListener(
+      "touchstart",
+      (event) => {
+        event.preventDefault();
+        closeMenu();
+      },
+      { passive: false },
+    );
+
+    // Резервный обычный клик
+    mobileMenuOverlay.addEventListener("click", closeMenu);
+  }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && isMenuOpen()) {
       closeMenu();
     }
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1100) {
+    if (window.innerWidth > 1100 && isMenuOpen()) {
       closeMenu();
     }
   });
